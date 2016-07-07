@@ -32,7 +32,7 @@ Namespace My
 
         <Global.System.Diagnostics.DebuggerStepThroughAttribute()> _
         Protected Overrides Sub OnCreateMainForm()
-            Me.MainForm = Global.Athena.Form1
+            Me.MainForm = Global.Athena.Main_frame
         End Sub
     End Class
 End Namespace
