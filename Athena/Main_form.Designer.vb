@@ -40,10 +40,16 @@ Partial Class Main_frame
         Me.Label1 = New System.Windows.Forms.Label()
         Me.TabPage2 = New System.Windows.Forms.TabPage()
         Me.TabPage3 = New System.Windows.Forms.TabPage()
+        Me.ListView = New System.Windows.Forms.ListView()
+        Me.lv_title = CType(New System.Windows.Forms.ColumnHeader(), System.Windows.Forms.ColumnHeader)
+        Me.lv_author = CType(New System.Windows.Forms.ColumnHeader(), System.Windows.Forms.ColumnHeader)
+        Me.lv_section = CType(New System.Windows.Forms.ColumnHeader(), System.Windows.Forms.ColumnHeader)
+        Me.lv_units = CType(New System.Windows.Forms.ColumnHeader(), System.Windows.Forms.ColumnHeader)
         Me.lbl_info = New System.Windows.Forms.Label()
         Me.MenuStrip1.SuspendLayout()
         Me.TabControl1.SuspendLayout()
         Me.TabPage1.SuspendLayout()
+        Me.TabPage3.SuspendLayout()
         Me.SuspendLayout()
         '
         'MenuStrip1
@@ -51,7 +57,7 @@ Partial Class Main_frame
         Me.MenuStrip1.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.FileToolStripMenuItem, Me.HelpToolStripMenuItem})
         Me.MenuStrip1.Location = New System.Drawing.Point(0, 0)
         Me.MenuStrip1.Name = "MenuStrip1"
-        Me.MenuStrip1.Size = New System.Drawing.Size(616, 24)
+        Me.MenuStrip1.Size = New System.Drawing.Size(1274, 24)
         Me.MenuStrip1.TabIndex = 0
         Me.MenuStrip1.Text = "MenuStrip1"
         '
@@ -95,7 +101,7 @@ Partial Class Main_frame
         Me.TabControl1.Location = New System.Drawing.Point(12, 27)
         Me.TabControl1.Name = "TabControl1"
         Me.TabControl1.SelectedIndex = 0
-        Me.TabControl1.Size = New System.Drawing.Size(592, 329)
+        Me.TabControl1.Size = New System.Drawing.Size(1250, 499)
         Me.TabControl1.TabIndex = 1
         '
         'TabPage1
@@ -110,45 +116,45 @@ Partial Class Main_frame
         Me.TabPage1.Location = New System.Drawing.Point(4, 22)
         Me.TabPage1.Name = "TabPage1"
         Me.TabPage1.Padding = New System.Windows.Forms.Padding(3)
-        Me.TabPage1.Size = New System.Drawing.Size(584, 303)
+        Me.TabPage1.Size = New System.Drawing.Size(1242, 473)
         Me.TabPage1.TabIndex = 0
         Me.TabPage1.Text = "Add book"
         Me.TabPage1.UseVisualStyleBackColor = True
         '
         'Button1
         '
-        Me.Button1.Location = New System.Drawing.Point(208, 202)
+        Me.Button1.Location = New System.Drawing.Point(480, 244)
         Me.Button1.Name = "Button1"
-        Me.Button1.Size = New System.Drawing.Size(142, 42)
+        Me.Button1.Size = New System.Drawing.Size(287, 70)
         Me.Button1.TabIndex = 6
         Me.Button1.Text = "Add book"
         Me.Button1.UseVisualStyleBackColor = True
         '
         'tb_section
         '
-        Me.tb_section.Location = New System.Drawing.Point(108, 146)
+        Me.tb_section.Location = New System.Drawing.Point(108, 177)
         Me.tb_section.Name = "tb_section"
-        Me.tb_section.Size = New System.Drawing.Size(406, 20)
+        Me.tb_section.Size = New System.Drawing.Size(1021, 20)
         Me.tb_section.TabIndex = 5
         '
         'tb_author
         '
-        Me.tb_author.Location = New System.Drawing.Point(108, 106)
+        Me.tb_author.Location = New System.Drawing.Point(108, 137)
         Me.tb_author.Name = "tb_author"
-        Me.tb_author.Size = New System.Drawing.Size(406, 20)
+        Me.tb_author.Size = New System.Drawing.Size(1021, 20)
         Me.tb_author.TabIndex = 4
         '
         'tb_title
         '
-        Me.tb_title.Location = New System.Drawing.Point(108, 63)
+        Me.tb_title.Location = New System.Drawing.Point(108, 94)
         Me.tb_title.Name = "tb_title"
-        Me.tb_title.Size = New System.Drawing.Size(406, 20)
+        Me.tb_title.Size = New System.Drawing.Size(1021, 20)
         Me.tb_title.TabIndex = 3
         '
         'Label3
         '
         Me.Label3.AutoSize = True
-        Me.Label3.Location = New System.Drawing.Point(59, 149)
+        Me.Label3.Location = New System.Drawing.Point(59, 180)
         Me.Label3.Name = "Label3"
         Me.Label3.Size = New System.Drawing.Size(43, 13)
         Me.Label3.TabIndex = 2
@@ -157,7 +163,7 @@ Partial Class Main_frame
         'Label2
         '
         Me.Label2.AutoSize = True
-        Me.Label2.Location = New System.Drawing.Point(67, 66)
+        Me.Label2.Location = New System.Drawing.Point(67, 97)
         Me.Label2.Name = "Label2"
         Me.Label2.Size = New System.Drawing.Size(35, 13)
         Me.Label2.TabIndex = 1
@@ -166,7 +172,7 @@ Partial Class Main_frame
         'Label1
         '
         Me.Label1.AutoSize = True
-        Me.Label1.Location = New System.Drawing.Point(64, 109)
+        Me.Label1.Location = New System.Drawing.Point(64, 140)
         Me.Label1.Name = "Label1"
         Me.Label1.Size = New System.Drawing.Size(38, 13)
         Me.Label1.TabIndex = 0
@@ -177,20 +183,57 @@ Partial Class Main_frame
         Me.TabPage2.Location = New System.Drawing.Point(4, 22)
         Me.TabPage2.Name = "TabPage2"
         Me.TabPage2.Padding = New System.Windows.Forms.Padding(3)
-        Me.TabPage2.Size = New System.Drawing.Size(584, 303)
+        Me.TabPage2.Size = New System.Drawing.Size(1242, 473)
         Me.TabPage2.TabIndex = 1
         Me.TabPage2.Text = "Search book"
         Me.TabPage2.UseVisualStyleBackColor = True
         '
         'TabPage3
         '
+        Me.TabPage3.Controls.Add(Me.ListView)
         Me.TabPage3.Location = New System.Drawing.Point(4, 22)
         Me.TabPage3.Name = "TabPage3"
         Me.TabPage3.Padding = New System.Windows.Forms.Padding(3)
-        Me.TabPage3.Size = New System.Drawing.Size(584, 303)
+        Me.TabPage3.Size = New System.Drawing.Size(1242, 473)
         Me.TabPage3.TabIndex = 2
         Me.TabPage3.Text = "Manage books"
         Me.TabPage3.UseVisualStyleBackColor = True
+        '
+        'ListView
+        '
+        Me.ListView.AllowColumnReorder = True
+        Me.ListView.Columns.AddRange(New System.Windows.Forms.ColumnHeader() {Me.lv_title, Me.lv_author, Me.lv_section, Me.lv_units})
+        Me.ListView.FullRowSelect = True
+        Me.ListView.GridLines = True
+        Me.ListView.Location = New System.Drawing.Point(0, 0)
+        Me.ListView.Name = "ListView"
+        Me.ListView.Size = New System.Drawing.Size(1242, 473)
+        Me.ListView.TabIndex = 0
+        Me.ListView.UseCompatibleStateImageBehavior = False
+        Me.ListView.View = System.Windows.Forms.View.Details
+        '
+        'lv_title
+        '
+        Me.lv_title.Text = "Title"
+        Me.lv_title.Width = 360
+        '
+        'lv_author
+        '
+        Me.lv_author.Text = "Author"
+        Me.lv_author.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
+        Me.lv_author.Width = 423
+        '
+        'lv_section
+        '
+        Me.lv_section.Text = "Section"
+        Me.lv_section.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
+        Me.lv_section.Width = 323
+        '
+        'lv_units
+        '
+        Me.lv_units.Text = "Units"
+        Me.lv_units.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
+        Me.lv_units.Width = 132
         '
         'lbl_info
         '
@@ -204,7 +247,7 @@ Partial Class Main_frame
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(616, 379)
+        Me.ClientSize = New System.Drawing.Size(1274, 538)
         Me.Controls.Add(Me.lbl_info)
         Me.Controls.Add(Me.TabControl1)
         Me.Controls.Add(Me.MenuStrip1)
@@ -217,6 +260,7 @@ Partial Class Main_frame
         Me.TabControl1.ResumeLayout(False)
         Me.TabPage1.ResumeLayout(False)
         Me.TabPage1.PerformLayout()
+        Me.TabPage3.ResumeLayout(False)
         Me.ResumeLayout(False)
         Me.PerformLayout()
 
@@ -235,9 +279,14 @@ Partial Class Main_frame
     Friend WithEvents Label2 As Label
     Friend WithEvents Label1 As Label
     Friend WithEvents Label3 As Label
+    Friend WithEvents lbl_info As Label
     Friend WithEvents Button1 As Button
     Friend WithEvents tb_section As TextBox
     Friend WithEvents tb_author As TextBox
     Friend WithEvents tb_title As TextBox
-    Friend WithEvents lbl_info As Label
+    Friend WithEvents ListView As ListView
+    Friend WithEvents lv_title As ColumnHeader
+    Friend WithEvents lv_author As ColumnHeader
+    Friend WithEvents lv_section As ColumnHeader
+    Friend WithEvents lv_units As ColumnHeader
 End Class
