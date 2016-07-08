@@ -6,7 +6,7 @@
     End Sub
 
     Public Sub read(ByRef b As Book)
-        Dim comm As String = ""     '"SELECT * FROM Books WHERE IdBooko='" & b.id & "';"
+        Dim comm As String = "SELECT * FROM Books WHERE Title='" & b.title & "', Author='" & b.author & "';"
         Dim reader As OleDb.OleDbDataReader = DDBBBroker.getInstance.read(comm)
         reader.Read()
         b.title = reader.GetString(1)
@@ -17,21 +17,31 @@
     End Sub
 
 
-    Public Function delete(ByVal b As Book) As Integer 'returns # of changed rows (should be 1)
+    Public Function delete(ByVal b As Book) As Integer
         Dim comm As String = ""     '"DELETE FROM Books WHERE Title=" & b.id & ";"
         Return DDBBBroker.getInstance().change(comm)
     End Function
 
 
-    Public Function update(ByVal b As Book) As Integer 'returns # of changed rows (should be 1)
-        Dim comm As String = ""     '"UPDATE Books SET PrecioBooko='" & System.Convert.ToString(b.price) & "', DescripciónBooko='" & b.description & "' WHERE IdBooko=" & b.id & ";"
+    Public Function update(ByVal b As Book) As Integer
+        Dim comm As String = "UPDATE Books SET Title='" & b.title & "', Author='" & b.author & "', Section='" & b.section & "', Units='" & b.units & "' WHERE Title=" & b.title & "', Author='" & b.author & "';"
         Return DDBBBroker.getInstance().change(comm)
     End Function
 
 
-    Public Function create(ByVal b As Book) As Integer 'returns # of changed rows (should be 1)
-        Dim comm As String = ""     '"INSERT INTO Books VALUES ('" & b.id & "','" & b.description & "', '" & b.price & "');"
-        Return DDBBBroker.getInstance().change(comm)
+    Public Function create(ByVal b As Book) As Integer
+        'try to insert; if exists read number of Units, add 1 and update book
+
+        Dim comm_insert As String = "INSERT INTO Books VALUES ('" & b.title & "','" & b.author & "', '" & b.section & "', '1');"
+
+        Try
+            Return DDBBBroker.getInstance().change(comm_insert)
+        Catch ex As Exception 'it already exists
+            read(b)
+            b.units += 1
+            Return update(b)
+        End Try
+
     End Function
 
 
@@ -39,8 +49,8 @@
         Dim comm As String = "SELECT * FROM Books ORDER BY Title;"
         Dim readerAux As OleDb.OleDbDataReader = DDBBBroker.getInstance().read(comm)
 
-        While readerAux.Read() 'title / author / section
-            b.dao._books.Add(New Book(readerAux.GetValue(1), readerAux.GetString(2), readerAux.GetValue(3)))
+        While readerAux.Read() 'title / author / section / units
+            b.dao._books.Add(New Book(readerAux.GetValue(0), readerAux.GetString(1), readerAux.GetValue(2), CInt(readerAux.GetValue(3))))
         End While
     End Sub
 End Class

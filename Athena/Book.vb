@@ -5,11 +5,21 @@
     Property units As Integer
     Property dao As DAOBook
 
-    Public Sub New(ByVal title As String, ByVal author As String, ByVal section As String)
-        Me._title = title
-        Me._author = author
-        Me._section = section
+    Public Sub New(ByVal title As String, ByVal author As String)
+        Me._title = StrConv(title, vbProperCase) 'first of sentence to upper
+        Me._author = System.Globalization.CultureInfo.CurrentCulture.TextInfo.ToTitleCase(author) 'first of each word to upper
+        Me._section = String.Empty
         Me._dao = New DAOBook()
+    End Sub
+
+    Public Sub New(ByVal title As String, ByVal author As String, ByVal section As String)
+        Me.New(title, author)
+        Me._section = StrConv(section, vbProperCase)
+    End Sub
+
+    Public Sub New(ByVal title As String, ByVal author As String, ByVal section As String, ByVal units As Integer)
+        Me.New(title, author, section)
+        Me.units = units
     End Sub
 
     Public Sub New()

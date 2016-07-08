@@ -35,12 +35,12 @@ Partial Class Main_frame
         Me.tb_section = New System.Windows.Forms.TextBox()
         Me.tb_author = New System.Windows.Forms.TextBox()
         Me.tb_title = New System.Windows.Forms.TextBox()
-        Me.Label3 = New System.Windows.Forms.Label()
-        Me.Label2 = New System.Windows.Forms.Label()
-        Me.Label1 = New System.Windows.Forms.Label()
+        Me.lbl_section = New System.Windows.Forms.Label()
+        Me.lbl_title = New System.Windows.Forms.Label()
+        Me.lbl_author = New System.Windows.Forms.Label()
         Me.TabPage2 = New System.Windows.Forms.TabPage()
         Me.TabPage3 = New System.Windows.Forms.TabPage()
-        Me.ListView = New System.Windows.Forms.ListView()
+        Me.listView_books = New System.Windows.Forms.ListView()
         Me.lv_title = CType(New System.Windows.Forms.ColumnHeader(), System.Windows.Forms.ColumnHeader)
         Me.lv_author = CType(New System.Windows.Forms.ColumnHeader(), System.Windows.Forms.ColumnHeader)
         Me.lv_section = CType(New System.Windows.Forms.ColumnHeader(), System.Windows.Forms.ColumnHeader)
@@ -101,7 +101,7 @@ Partial Class Main_frame
         Me.TabControl1.Location = New System.Drawing.Point(12, 27)
         Me.TabControl1.Name = "TabControl1"
         Me.TabControl1.SelectedIndex = 0
-        Me.TabControl1.Size = New System.Drawing.Size(1250, 499)
+        Me.TabControl1.Size = New System.Drawing.Size(1250, 486)
         Me.TabControl1.TabIndex = 1
         '
         'TabPage1
@@ -110,13 +110,13 @@ Partial Class Main_frame
         Me.TabPage1.Controls.Add(Me.tb_section)
         Me.TabPage1.Controls.Add(Me.tb_author)
         Me.TabPage1.Controls.Add(Me.tb_title)
-        Me.TabPage1.Controls.Add(Me.Label3)
-        Me.TabPage1.Controls.Add(Me.Label2)
-        Me.TabPage1.Controls.Add(Me.Label1)
+        Me.TabPage1.Controls.Add(Me.lbl_section)
+        Me.TabPage1.Controls.Add(Me.lbl_title)
+        Me.TabPage1.Controls.Add(Me.lbl_author)
         Me.TabPage1.Location = New System.Drawing.Point(4, 22)
         Me.TabPage1.Name = "TabPage1"
         Me.TabPage1.Padding = New System.Windows.Forms.Padding(3)
-        Me.TabPage1.Size = New System.Drawing.Size(1242, 473)
+        Me.TabPage1.Size = New System.Drawing.Size(1242, 460)
         Me.TabPage1.TabIndex = 0
         Me.TabPage1.Text = "Add book"
         Me.TabPage1.UseVisualStyleBackColor = True
@@ -151,32 +151,32 @@ Partial Class Main_frame
         Me.tb_title.Size = New System.Drawing.Size(1021, 20)
         Me.tb_title.TabIndex = 3
         '
-        'Label3
+        'lbl_section
         '
-        Me.Label3.AutoSize = True
-        Me.Label3.Location = New System.Drawing.Point(59, 180)
-        Me.Label3.Name = "Label3"
-        Me.Label3.Size = New System.Drawing.Size(43, 13)
-        Me.Label3.TabIndex = 2
-        Me.Label3.Text = "Section"
+        Me.lbl_section.AutoSize = True
+        Me.lbl_section.Location = New System.Drawing.Point(59, 180)
+        Me.lbl_section.Name = "lbl_section"
+        Me.lbl_section.Size = New System.Drawing.Size(43, 13)
+        Me.lbl_section.TabIndex = 2
+        Me.lbl_section.Text = "Section"
         '
-        'Label2
+        'lbl_title
         '
-        Me.Label2.AutoSize = True
-        Me.Label2.Location = New System.Drawing.Point(67, 97)
-        Me.Label2.Name = "Label2"
-        Me.Label2.Size = New System.Drawing.Size(35, 13)
-        Me.Label2.TabIndex = 1
-        Me.Label2.Text = "Name"
+        Me.lbl_title.AutoSize = True
+        Me.lbl_title.Location = New System.Drawing.Point(75, 97)
+        Me.lbl_title.Name = "lbl_title"
+        Me.lbl_title.Size = New System.Drawing.Size(27, 13)
+        Me.lbl_title.TabIndex = 1
+        Me.lbl_title.Text = "Title"
         '
-        'Label1
+        'lbl_author
         '
-        Me.Label1.AutoSize = True
-        Me.Label1.Location = New System.Drawing.Point(64, 140)
-        Me.Label1.Name = "Label1"
-        Me.Label1.Size = New System.Drawing.Size(38, 13)
-        Me.Label1.TabIndex = 0
-        Me.Label1.Text = "Author"
+        Me.lbl_author.AutoSize = True
+        Me.lbl_author.Location = New System.Drawing.Point(64, 140)
+        Me.lbl_author.Name = "lbl_author"
+        Me.lbl_author.Size = New System.Drawing.Size(38, 13)
+        Me.lbl_author.TabIndex = 0
+        Me.lbl_author.Text = "Author"
         '
         'TabPage2
         '
@@ -190,27 +190,26 @@ Partial Class Main_frame
         '
         'TabPage3
         '
-        Me.TabPage3.Controls.Add(Me.ListView)
+        Me.TabPage3.Controls.Add(Me.listView_books)
         Me.TabPage3.Location = New System.Drawing.Point(4, 22)
         Me.TabPage3.Name = "TabPage3"
         Me.TabPage3.Padding = New System.Windows.Forms.Padding(3)
-        Me.TabPage3.Size = New System.Drawing.Size(1242, 473)
+        Me.TabPage3.Size = New System.Drawing.Size(1242, 460)
         Me.TabPage3.TabIndex = 2
         Me.TabPage3.Text = "Manage books"
         Me.TabPage3.UseVisualStyleBackColor = True
         '
-        'ListView
+        'listView_books
         '
-        Me.ListView.AllowColumnReorder = True
-        Me.ListView.Columns.AddRange(New System.Windows.Forms.ColumnHeader() {Me.lv_title, Me.lv_author, Me.lv_section, Me.lv_units})
-        Me.ListView.FullRowSelect = True
-        Me.ListView.GridLines = True
-        Me.ListView.Location = New System.Drawing.Point(0, 0)
-        Me.ListView.Name = "ListView"
-        Me.ListView.Size = New System.Drawing.Size(1242, 473)
-        Me.ListView.TabIndex = 0
-        Me.ListView.UseCompatibleStateImageBehavior = False
-        Me.ListView.View = System.Windows.Forms.View.Details
+        Me.listView_books.Columns.AddRange(New System.Windows.Forms.ColumnHeader() {Me.lv_title, Me.lv_author, Me.lv_section, Me.lv_units})
+        Me.listView_books.FullRowSelect = True
+        Me.listView_books.GridLines = True
+        Me.listView_books.Location = New System.Drawing.Point(0, 0)
+        Me.listView_books.Name = "listView_books"
+        Me.listView_books.Size = New System.Drawing.Size(1242, 473)
+        Me.listView_books.TabIndex = 0
+        Me.listView_books.UseCompatibleStateImageBehavior = False
+        Me.listView_books.View = System.Windows.Forms.View.Details
         '
         'lv_title
         '
@@ -238,7 +237,7 @@ Partial Class Main_frame
         'lbl_info
         '
         Me.lbl_info.AutoSize = True
-        Me.lbl_info.Location = New System.Drawing.Point(16, 359)
+        Me.lbl_info.Location = New System.Drawing.Point(13, 516)
         Me.lbl_info.Name = "lbl_info"
         Me.lbl_info.Size = New System.Drawing.Size(0, 13)
         Me.lbl_info.TabIndex = 2
@@ -276,15 +275,15 @@ Partial Class Main_frame
     Friend WithEvents TabPage1 As TabPage
     Friend WithEvents TabPage2 As TabPage
     Friend WithEvents TabPage3 As TabPage
-    Friend WithEvents Label2 As Label
-    Friend WithEvents Label1 As Label
-    Friend WithEvents Label3 As Label
+    Friend WithEvents lbl_title As Label
+    Friend WithEvents lbl_author As Label
+    Friend WithEvents lbl_section As Label
     Friend WithEvents lbl_info As Label
     Friend WithEvents Button1 As Button
     Friend WithEvents tb_section As TextBox
     Friend WithEvents tb_author As TextBox
     Friend WithEvents tb_title As TextBox
-    Friend WithEvents ListView As ListView
+    Friend WithEvents listView_books As ListView
     Friend WithEvents lv_title As ColumnHeader
     Friend WithEvents lv_author As ColumnHeader
     Friend WithEvents lv_section As ColumnHeader

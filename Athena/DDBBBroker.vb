@@ -1,7 +1,7 @@
 ﻿Imports Microsoft.VisualBasic
 
 Public Class DDBBBroker
-    Private Shared _connection_driver As String = "Provider=Microsoft.ACE.OLEDB.12.0; Data Source=Athena.accdb"
+    Private Shared _connection_driver As String = "Provider=Microsoft.ACE.OLEDB.12.0; Data Source=ddbb/Athena.accdb"
     Private Shared _connection As OleDb.OleDbConnection
     Private Shared _instance As DDBBBroker
 
@@ -21,7 +21,7 @@ Public Class DDBBBroker
 
 
     Public Function read(ByVal sql As String) As OleDb.OleDbDataReader
-        Dim command As New OleDb.OleDbCommand(sql, _connection) '== New SqlCommand(sql, _con)
+        Dim command As New OleDb.OleDbCommand(sql, _connection)
         Return command.ExecuteReader
     End Function
 
