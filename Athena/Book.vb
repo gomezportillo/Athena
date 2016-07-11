@@ -9,6 +9,7 @@
         Me._title = StrConv(title, vbProperCase) 'first of sentence to upper
         Me._author = System.Globalization.CultureInfo.CurrentCulture.TextInfo.ToTitleCase(author) 'first of each word to upper
         Me._section = String.Empty
+        Me._units = 0
         Me._dao = New DAOBook()
     End Sub
 
@@ -46,5 +47,9 @@
         Return Me._dao.create(Me)
     End Function
 
+
+    Overrides Function ToString() As String
+        Return Me.title + " | " + Me.author + " | " + Me.section + " | " + CStr(Me.units)
+    End Function
 
 End Class

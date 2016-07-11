@@ -3,8 +3,7 @@
     Private _b As Book
 
     Private Sub AboutToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles AboutToolStripMenuItem.Click
-        Dim message As String = "Athena is a open-source project for managing a home library." & vbCrLf & vbCrLf & "You can see the source code at http://github.com/gomezportillo/athena"
-        MessageBox.Show(message, "About Athena", MessageBoxButtons.OK)
+        About_form.Show()
     End Sub
 
     Private Sub ExitToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles ExitToolStripMenuItem.Click
@@ -21,6 +20,8 @@
 
             _b.create()
 
+            LoadDDBB()
+
             lbl_info.Text = "Book " & tb_title.Text & "stored correctly"
         Else
             lbl_info.Text = "Please insert at least a title and an author"
@@ -28,12 +29,8 @@
 
     End Sub
 
-    Private Sub ListView_SelectedIndexChanged(sender As Object, e As EventArgs) Handles listView_books.SelectedIndexChanged
-
-    End Sub
-
-    Private Sub LoadDDBBUpdateList()
-        listView_books.Clear()
+    Private Sub LoadDDBB()
+        listView_books.Items.Clear()
 
         _b = New Book()
 
@@ -49,16 +46,17 @@
             item = New ListViewItem(bAux.title)
             item.SubItems.Add(bAux.author)
             item.SubItems.Add(bAux.section)
-            item.SubItems.Add(bAux.units)
+            item.SubItems.Add(CStr(bAux.units))
 
             listView_books.Items.Add(item)
 
-            lbl_info.Text = bAux.ToString()
+            lbl_info.Text = "Listview updated"
         Next
 
     End Sub
 
     Private Sub Main_frame_Load(sender As Object, e As EventArgs) Handles MyBase.Load
-        LoadDDBBUpdateList()
+        LoadDDBB()
     End Sub
+
 End Class
