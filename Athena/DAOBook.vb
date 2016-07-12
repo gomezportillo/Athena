@@ -18,7 +18,7 @@
 
 
     Public Function delete(ByVal b As Book) As Integer
-        Dim comm As String = ""     '"DELETE FROM Books WHERE Title=" & b.id & ";"
+        Dim comm As String = "DELETE FROM Books WHERE Title='" & b.title & "' AND Author='" & b.author & "';"
         Return DDBBBroker.getInstance().change(comm)
     End Function
 
@@ -32,7 +32,7 @@
 
 
     Public Function create(ByVal b As Book) As Integer
-        'try to insert; if exists update with +1 units
+        'try to insert; if exists then update with +1 units
 
         Try
 
