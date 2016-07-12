@@ -49,7 +49,7 @@ Partial Class About_form
         'PictureBox1
         '
         Me.PictureBox1.Cursor = System.Windows.Forms.Cursors.Hand
-        Me.PictureBox1.Image = Global.Athena.My.Resources.Resources.logo_small
+        Me.PictureBox1.Image = Global.Athena.My.Resources.Resources.logo_small1
         resources.ApplyResources(Me.PictureBox1, "PictureBox1")
         Me.PictureBox1.Name = "PictureBox1"
         Me.PictureBox1.TabStop = False
