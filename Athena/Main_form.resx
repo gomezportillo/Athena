@@ -180,38 +180,38 @@
     <value>$this</value>
   </data>
   <data name="&gt;&gt;MenuStrip1.ZOrder" xml:space="preserve">
-    <value>3</value>
+    <value>2</value>
   </data>
   <assembly alias="System.Windows.Forms" name="System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
-  <data name="Button1.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+  <data name="Btn_add.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
     <value>NoControl</value>
   </data>
-  <data name="Button1.Location" type="System.Drawing.Point, System.Drawing">
-    <value>480, 244</value>
+  <data name="Btn_add.Location" type="System.Drawing.Point, System.Drawing">
+    <value>454, 312</value>
   </data>
-  <data name="Button1.Size" type="System.Drawing.Size, System.Drawing">
-    <value>287, 70</value>
+  <data name="Btn_add.Size" type="System.Drawing.Size, System.Drawing">
+    <value>287, 60</value>
   </data>
-  <data name="Button1.TabIndex" type="System.Int32, mscorlib">
+  <data name="Btn_add.TabIndex" type="System.Int32, mscorlib">
     <value>6</value>
   </data>
-  <data name="Button1.Text" xml:space="preserve">
+  <data name="Btn_add.Text" xml:space="preserve">
     <value>Add book</value>
   </data>
-  <data name="&gt;&gt;Button1.Name" xml:space="preserve">
-    <value>Button1</value>
+  <data name="&gt;&gt;Btn_add.Name" xml:space="preserve">
+    <value>Btn_add</value>
   </data>
-  <data name="&gt;&gt;Button1.Type" xml:space="preserve">
+  <data name="&gt;&gt;Btn_add.Type" xml:space="preserve">
     <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="&gt;&gt;Button1.Parent" xml:space="preserve">
+  <data name="&gt;&gt;Btn_add.Parent" xml:space="preserve">
     <value>TabPage1</value>
   </data>
-  <data name="&gt;&gt;Button1.ZOrder" xml:space="preserve">
+  <data name="&gt;&gt;Btn_add.ZOrder" xml:space="preserve">
     <value>0</value>
   </data>
   <data name="tb_section.Location" type="System.Drawing.Point, System.Drawing">
-    <value>108, 177</value>
+    <value>107, 209</value>
   </data>
   <data name="tb_section.Size" type="System.Drawing.Size, System.Drawing">
     <value>1021, 20</value>
@@ -232,7 +232,7 @@
     <value>1</value>
   </data>
   <data name="tb_author.Location" type="System.Drawing.Point, System.Drawing">
-    <value>108, 137</value>
+    <value>107, 169</value>
   </data>
   <data name="tb_author.Size" type="System.Drawing.Size, System.Drawing">
     <value>1021, 20</value>
@@ -253,7 +253,7 @@
     <value>2</value>
   </data>
   <data name="tb_title.Location" type="System.Drawing.Point, System.Drawing">
-    <value>108, 94</value>
+    <value>107, 126</value>
   </data>
   <data name="tb_title.Size" type="System.Drawing.Size, System.Drawing">
     <value>1021, 20</value>
@@ -280,7 +280,7 @@
     <value>NoControl</value>
   </data>
   <data name="lbl_section.Location" type="System.Drawing.Point, System.Drawing">
-    <value>59, 180</value>
+    <value>58, 212</value>
   </data>
   <data name="lbl_section.Size" type="System.Drawing.Size, System.Drawing">
     <value>43, 13</value>
@@ -310,7 +310,7 @@
     <value>NoControl</value>
   </data>
   <data name="lbl_title.Location" type="System.Drawing.Point, System.Drawing">
-    <value>75, 97</value>
+    <value>74, 129</value>
   </data>
   <data name="lbl_title.Size" type="System.Drawing.Size, System.Drawing">
     <value>27, 13</value>
@@ -340,7 +340,7 @@
     <value>NoControl</value>
   </data>
   <data name="lbl_author.Location" type="System.Drawing.Point, System.Drawing">
-    <value>64, 140</value>
+    <value>63, 172</value>
   </data>
   <data name="lbl_author.Size" type="System.Drawing.Size, System.Drawing">
     <value>38, 13</value>
@@ -370,7 +370,7 @@
     <value>3, 3, 3, 3</value>
   </data>
   <data name="TabPage1.Size" type="System.Drawing.Size, System.Drawing">
-    <value>1242, 460</value>
+    <value>1242, 545</value>
   </data>
   <data name="TabPage1.TabIndex" type="System.Int32, mscorlib">
     <value>0</value>
@@ -390,32 +390,131 @@
   <data name="&gt;&gt;TabPage1.ZOrder" xml:space="preserve">
     <value>0</value>
   </data>
-  <data name="TabPage2.Location" type="System.Drawing.Point, System.Drawing">
-    <value>4, 22</value>
+  <data name="btn_search_section.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
   </data>
-  <data name="TabPage2.Padding" type="System.Windows.Forms.Padding, System.Windows.Forms">
-    <value>3, 3, 3, 3</value>
+  <data name="btn_search_section.Location" type="System.Drawing.Point, System.Drawing">
+    <value>1098, 5</value>
   </data>
-  <data name="TabPage2.Size" type="System.Drawing.Size, System.Drawing">
-    <value>1242, 460</value>
+  <data name="btn_search_section.Size" type="System.Drawing.Size, System.Drawing">
+    <value>138, 21</value>
   </data>
-  <data name="TabPage2.TabIndex" type="System.Int32, mscorlib">
+  <data name="btn_search_section.TabIndex" type="System.Int32, mscorlib">
+    <value>5</value>
+  </data>
+  <data name="btn_search_section.Text" xml:space="preserve">
+    <value>Search by section</value>
+  </data>
+  <data name="&gt;&gt;btn_search_section.Name" xml:space="preserve">
+    <value>btn_search_section</value>
+  </data>
+  <data name="&gt;&gt;btn_search_section.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;btn_search_section.Parent" xml:space="preserve">
+    <value>TabPage3</value>
+  </data>
+  <data name="&gt;&gt;btn_search_section.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <data name="btn_search_title.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="btn_search_title.Location" type="System.Drawing.Point, System.Drawing">
+    <value>810, 6</value>
+  </data>
+  <data name="btn_search_title.Size" type="System.Drawing.Size, System.Drawing">
+    <value>138, 21</value>
+  </data>
+  <data name="btn_search_title.TabIndex" type="System.Int32, mscorlib">
+    <value>4</value>
+  </data>
+  <data name="btn_search_title.Text" xml:space="preserve">
+    <value>Search by title</value>
+  </data>
+  <data name="&gt;&gt;btn_search_title.Name" xml:space="preserve">
+    <value>btn_search_title</value>
+  </data>
+  <data name="&gt;&gt;btn_search_title.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;btn_search_title.Parent" xml:space="preserve">
+    <value>TabPage3</value>
+  </data>
+  <data name="&gt;&gt;btn_search_title.ZOrder" xml:space="preserve">
     <value>1</value>
   </data>
-  <data name="TabPage2.Text" xml:space="preserve">
-    <value>Search book</value>
+  <data name="btn_search_author.Location" type="System.Drawing.Point, System.Drawing">
+    <value>954, 6</value>
   </data>
-  <data name="&gt;&gt;TabPage2.Name" xml:space="preserve">
-    <value>TabPage2</value>
+  <data name="btn_search_author.Size" type="System.Drawing.Size, System.Drawing">
+    <value>138, 21</value>
   </data>
-  <data name="&gt;&gt;TabPage2.Type" xml:space="preserve">
-    <value>System.Windows.Forms.TabPage, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  <data name="btn_search_author.TabIndex" type="System.Int32, mscorlib">
+    <value>3</value>
   </data>
-  <data name="&gt;&gt;TabPage2.Parent" xml:space="preserve">
-    <value>TabControl1</value>
+  <data name="btn_search_author.Text" xml:space="preserve">
+    <value>Search by author</value>
   </data>
-  <data name="&gt;&gt;TabPage2.ZOrder" xml:space="preserve">
+  <data name="&gt;&gt;btn_search_author.Name" xml:space="preserve">
+    <value>btn_search_author</value>
+  </data>
+  <data name="&gt;&gt;btn_search_author.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;btn_search_author.Parent" xml:space="preserve">
+    <value>TabPage3</value>
+  </data>
+  <data name="&gt;&gt;btn_search_author.ZOrder" xml:space="preserve">
+    <value>2</value>
+  </data>
+  <data name="tb_search.Location" type="System.Drawing.Point, System.Drawing">
+    <value>71, 7</value>
+  </data>
+  <data name="tb_search.Size" type="System.Drawing.Size, System.Drawing">
+    <value>733, 20</value>
+  </data>
+  <data name="tb_search.TabIndex" type="System.Int32, mscorlib">
+    <value>2</value>
+  </data>
+  <data name="&gt;&gt;tb_search.Name" xml:space="preserve">
+    <value>tb_search</value>
+  </data>
+  <data name="&gt;&gt;tb_search.Type" xml:space="preserve">
+    <value>System.Windows.Forms.TextBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;tb_search.Parent" xml:space="preserve">
+    <value>TabPage3</value>
+  </data>
+  <data name="&gt;&gt;tb_search.ZOrder" xml:space="preserve">
+    <value>3</value>
+  </data>
+  <data name="Label1.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="Label1.Location" type="System.Drawing.Point, System.Drawing">
+    <value>24, 10</value>
+  </data>
+  <data name="Label1.Size" type="System.Drawing.Size, System.Drawing">
+    <value>41, 13</value>
+  </data>
+  <data name="Label1.TabIndex" type="System.Int32, mscorlib">
     <value>1</value>
+  </data>
+  <data name="Label1.Text" xml:space="preserve">
+    <value>Search</value>
+  </data>
+  <data name="&gt;&gt;Label1.Name" xml:space="preserve">
+    <value>Label1</value>
+  </data>
+  <data name="&gt;&gt;Label1.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;Label1.Parent" xml:space="preserve">
+    <value>TabPage3</value>
+  </data>
+  <data name="&gt;&gt;Label1.ZOrder" xml:space="preserve">
+    <value>4</value>
   </data>
   <data name="lv_title.Text" xml:space="preserve">
     <value>Title</value>
@@ -442,10 +541,10 @@
     <value>113</value>
   </data>
   <data name="listView_books.Location" type="System.Drawing.Point, System.Drawing">
-    <value>0, 0</value>
+    <value>0, 32</value>
   </data>
   <data name="listView_books.Size" type="System.Drawing.Size, System.Drawing">
-    <value>1242, 473</value>
+    <value>1242, 512</value>
   </data>
   <data name="listView_books.TabIndex" type="System.Int32, mscorlib">
     <value>0</value>
@@ -460,7 +559,7 @@
     <value>TabPage3</value>
   </data>
   <data name="&gt;&gt;listView_books.ZOrder" xml:space="preserve">
-    <value>0</value>
+    <value>5</value>
   </data>
   <data name="TabPage3.Location" type="System.Drawing.Point, System.Drawing">
     <value>4, 22</value>
@@ -469,7 +568,7 @@
     <value>3, 3, 3, 3</value>
   </data>
   <data name="TabPage3.Size" type="System.Drawing.Size, System.Drawing">
-    <value>1242, 460</value>
+    <value>1242, 545</value>
   </data>
   <data name="TabPage3.TabIndex" type="System.Int32, mscorlib">
     <value>2</value>
@@ -487,13 +586,40 @@
     <value>TabControl1</value>
   </data>
   <data name="&gt;&gt;TabPage3.ZOrder" xml:space="preserve">
+    <value>1</value>
+  </data>
+  <data name="TabPage2.Location" type="System.Drawing.Point, System.Drawing">
+    <value>4, 22</value>
+  </data>
+  <data name="TabPage2.Padding" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>3, 3, 3, 3</value>
+  </data>
+  <data name="TabPage2.Size" type="System.Drawing.Size, System.Drawing">
+    <value>1242, 545</value>
+  </data>
+  <data name="TabPage2.TabIndex" type="System.Int32, mscorlib">
+    <value>3</value>
+  </data>
+  <data name="TabPage2.Text" xml:space="preserve">
+    <value>Wish list</value>
+  </data>
+  <data name="&gt;&gt;TabPage2.Name" xml:space="preserve">
+    <value>TabPage2</value>
+  </data>
+  <data name="&gt;&gt;TabPage2.Type" xml:space="preserve">
+    <value>System.Windows.Forms.TabPage, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;TabPage2.Parent" xml:space="preserve">
+    <value>TabControl1</value>
+  </data>
+  <data name="&gt;&gt;TabPage2.ZOrder" xml:space="preserve">
     <value>2</value>
   </data>
   <data name="TabControl1.Location" type="System.Drawing.Point, System.Drawing">
     <value>12, 27</value>
   </data>
   <data name="TabControl1.Size" type="System.Drawing.Size, System.Drawing">
-    <value>1250, 486</value>
+    <value>1250, 571</value>
   </data>
   <data name="TabControl1.TabIndex" type="System.Int32, mscorlib">
     <value>1</value>
@@ -508,7 +634,7 @@
     <value>$this</value>
   </data>
   <data name="&gt;&gt;TabControl1.ZOrder" xml:space="preserve">
-    <value>2</value>
+    <value>3</value>
   </data>
   <data name="lbl_info.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
@@ -517,7 +643,7 @@
     <value>NoControl</value>
   </data>
   <data name="lbl_info.Location" type="System.Drawing.Point, System.Drawing">
-    <value>13, 516</value>
+    <value>12, 601</value>
   </data>
   <data name="lbl_info.Size" type="System.Drawing.Size, System.Drawing">
     <value>0, 13</value>
@@ -544,7 +670,7 @@
     <value>6, 13</value>
   </data>
   <data name="$this.ClientSize" type="System.Drawing.Size, System.Drawing">
-    <value>1274, 538</value>
+    <value>1274, 623</value>
   </data>
   <data name="$this.Icon" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
@@ -6727,10 +6853,22 @@
   <data name="&gt;&gt;FileToolStripMenuItem.Type" xml:space="preserve">
     <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
+  <data name="&gt;&gt;ExitToolStripMenuItem.Name" xml:space="preserve">
+    <value>ExitToolStripMenuItem</value>
+  </data>
+  <data name="&gt;&gt;ExitToolStripMenuItem.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
   <data name="&gt;&gt;HelpToolStripMenuItem.Name" xml:space="preserve">
     <value>HelpToolStripMenuItem</value>
   </data>
   <data name="&gt;&gt;HelpToolStripMenuItem.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;AboutToolStripMenuItem.Name" xml:space="preserve">
+    <value>AboutToolStripMenuItem</value>
+  </data>
+  <data name="&gt;&gt;AboutToolStripMenuItem.Type" xml:space="preserve">
     <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;lv_title.Name" xml:space="preserve">
@@ -6756,18 +6894,6 @@
   </data>
   <data name="&gt;&gt;lv_units.Type" xml:space="preserve">
     <value>System.Windows.Forms.ColumnHeader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;ExitToolStripMenuItem.Name" xml:space="preserve">
-    <value>ExitToolStripMenuItem</value>
-  </data>
-  <data name="&gt;&gt;ExitToolStripMenuItem.Type" xml:space="preserve">
-    <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;AboutToolStripMenuItem.Name" xml:space="preserve">
-    <value>AboutToolStripMenuItem</value>
-  </data>
-  <data name="&gt;&gt;AboutToolStripMenuItem.Type" xml:space="preserve">
-    <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;$this.Name" xml:space="preserve">
     <value>Main_frame</value>

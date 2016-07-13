@@ -27,17 +27,18 @@ Partial Class Main_frame
         Me.MenuStrip1 = New System.Windows.Forms.MenuStrip()
         Me.ContextMenuStrip1 = New System.Windows.Forms.ContextMenuStrip(Me.components)
         Me.FileToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+        Me.ExitToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.HelpToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+        Me.AboutToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.TabControl1 = New System.Windows.Forms.TabControl()
         Me.TabPage1 = New System.Windows.Forms.TabPage()
-        Me.Button1 = New System.Windows.Forms.Button()
+        Me.Btn_add = New System.Windows.Forms.Button()
         Me.tb_section = New System.Windows.Forms.TextBox()
         Me.tb_author = New System.Windows.Forms.TextBox()
         Me.tb_title = New System.Windows.Forms.TextBox()
         Me.lbl_section = New System.Windows.Forms.Label()
         Me.lbl_title = New System.Windows.Forms.Label()
         Me.lbl_author = New System.Windows.Forms.Label()
-        Me.TabPage2 = New System.Windows.Forms.TabPage()
         Me.TabPage3 = New System.Windows.Forms.TabPage()
         Me.listView_books = New System.Windows.Forms.ListView()
         Me.lv_title = CType(New System.Windows.Forms.ColumnHeader(), System.Windows.Forms.ColumnHeader)
@@ -45,8 +46,12 @@ Partial Class Main_frame
         Me.lv_section = CType(New System.Windows.Forms.ColumnHeader(), System.Windows.Forms.ColumnHeader)
         Me.lv_units = CType(New System.Windows.Forms.ColumnHeader(), System.Windows.Forms.ColumnHeader)
         Me.lbl_info = New System.Windows.Forms.Label()
-        Me.ExitToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
-        Me.AboutToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+        Me.TabPage2 = New System.Windows.Forms.TabPage()
+        Me.Label1 = New System.Windows.Forms.Label()
+        Me.tb_search = New System.Windows.Forms.TextBox()
+        Me.btn_search_author = New System.Windows.Forms.Button()
+        Me.btn_search_title = New System.Windows.Forms.Button()
+        Me.btn_search_section = New System.Windows.Forms.Button()
         Me.MenuStrip1.SuspendLayout()
         Me.TabControl1.SuspendLayout()
         Me.TabPage1.SuspendLayout()
@@ -71,24 +76,34 @@ Partial Class Main_frame
         Me.FileToolStripMenuItem.Name = "FileToolStripMenuItem"
         resources.ApplyResources(Me.FileToolStripMenuItem, "FileToolStripMenuItem")
         '
+        'ExitToolStripMenuItem
+        '
+        Me.ExitToolStripMenuItem.Name = "ExitToolStripMenuItem"
+        resources.ApplyResources(Me.ExitToolStripMenuItem, "ExitToolStripMenuItem")
+        '
         'HelpToolStripMenuItem
         '
         Me.HelpToolStripMenuItem.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.AboutToolStripMenuItem})
         Me.HelpToolStripMenuItem.Name = "HelpToolStripMenuItem"
         resources.ApplyResources(Me.HelpToolStripMenuItem, "HelpToolStripMenuItem")
         '
+        'AboutToolStripMenuItem
+        '
+        Me.AboutToolStripMenuItem.Name = "AboutToolStripMenuItem"
+        resources.ApplyResources(Me.AboutToolStripMenuItem, "AboutToolStripMenuItem")
+        '
         'TabControl1
         '
         Me.TabControl1.Controls.Add(Me.TabPage1)
-        Me.TabControl1.Controls.Add(Me.TabPage2)
         Me.TabControl1.Controls.Add(Me.TabPage3)
+        Me.TabControl1.Controls.Add(Me.TabPage2)
         resources.ApplyResources(Me.TabControl1, "TabControl1")
         Me.TabControl1.Name = "TabControl1"
         Me.TabControl1.SelectedIndex = 0
         '
         'TabPage1
         '
-        Me.TabPage1.Controls.Add(Me.Button1)
+        Me.TabPage1.Controls.Add(Me.Btn_add)
         Me.TabPage1.Controls.Add(Me.tb_section)
         Me.TabPage1.Controls.Add(Me.tb_author)
         Me.TabPage1.Controls.Add(Me.tb_title)
@@ -99,11 +114,11 @@ Partial Class Main_frame
         Me.TabPage1.Name = "TabPage1"
         Me.TabPage1.UseVisualStyleBackColor = True
         '
-        'Button1
+        'Btn_add
         '
-        resources.ApplyResources(Me.Button1, "Button1")
-        Me.Button1.Name = "Button1"
-        Me.Button1.UseVisualStyleBackColor = True
+        resources.ApplyResources(Me.Btn_add, "Btn_add")
+        Me.Btn_add.Name = "Btn_add"
+        Me.Btn_add.UseVisualStyleBackColor = True
         '
         'tb_section
         '
@@ -135,14 +150,13 @@ Partial Class Main_frame
         resources.ApplyResources(Me.lbl_author, "lbl_author")
         Me.lbl_author.Name = "lbl_author"
         '
-        'TabPage2
-        '
-        resources.ApplyResources(Me.TabPage2, "TabPage2")
-        Me.TabPage2.Name = "TabPage2"
-        Me.TabPage2.UseVisualStyleBackColor = True
-        '
         'TabPage3
         '
+        Me.TabPage3.Controls.Add(Me.btn_search_section)
+        Me.TabPage3.Controls.Add(Me.btn_search_title)
+        Me.TabPage3.Controls.Add(Me.btn_search_author)
+        Me.TabPage3.Controls.Add(Me.tb_search)
+        Me.TabPage3.Controls.Add(Me.Label1)
         Me.TabPage3.Controls.Add(Me.listView_books)
         resources.ApplyResources(Me.TabPage3, "TabPage3")
         Me.TabPage3.Name = "TabPage3"
@@ -179,23 +193,47 @@ Partial Class Main_frame
         resources.ApplyResources(Me.lbl_info, "lbl_info")
         Me.lbl_info.Name = "lbl_info"
         '
-        'ExitToolStripMenuItem
+        'TabPage2
         '
-        Me.ExitToolStripMenuItem.Name = "ExitToolStripMenuItem"
-        resources.ApplyResources(Me.ExitToolStripMenuItem, "ExitToolStripMenuItem")
+        resources.ApplyResources(Me.TabPage2, "TabPage2")
+        Me.TabPage2.Name = "TabPage2"
+        Me.TabPage2.UseVisualStyleBackColor = True
         '
-        'AboutToolStripMenuItem
+        'Label1
         '
-        Me.AboutToolStripMenuItem.Name = "AboutToolStripMenuItem"
-        resources.ApplyResources(Me.AboutToolStripMenuItem, "AboutToolStripMenuItem")
+        resources.ApplyResources(Me.Label1, "Label1")
+        Me.Label1.Name = "Label1"
+        '
+        'tb_search
+        '
+        resources.ApplyResources(Me.tb_search, "tb_search")
+        Me.tb_search.Name = "tb_search"
+        '
+        'btn_search_author
+        '
+        resources.ApplyResources(Me.btn_search_author, "btn_search_author")
+        Me.btn_search_author.Name = "btn_search_author"
+        Me.btn_search_author.UseVisualStyleBackColor = True
+        '
+        'btn_search_title
+        '
+        resources.ApplyResources(Me.btn_search_title, "btn_search_title")
+        Me.btn_search_title.Name = "btn_search_title"
+        Me.btn_search_title.UseVisualStyleBackColor = True
+        '
+        'btn_search_section
+        '
+        resources.ApplyResources(Me.btn_search_section, "btn_search_section")
+        Me.btn_search_section.Name = "btn_search_section"
+        Me.btn_search_section.UseVisualStyleBackColor = True
         '
         'Main_frame
         '
         resources.ApplyResources(Me, "$this")
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.Controls.Add(Me.lbl_info)
-        Me.Controls.Add(Me.TabControl1)
         Me.Controls.Add(Me.MenuStrip1)
+        Me.Controls.Add(Me.TabControl1)
         Me.MainMenuStrip = Me.MenuStrip1
         Me.Name = "Main_frame"
         Me.MenuStrip1.ResumeLayout(False)
@@ -204,6 +242,7 @@ Partial Class Main_frame
         Me.TabPage1.ResumeLayout(False)
         Me.TabPage1.PerformLayout()
         Me.TabPage3.ResumeLayout(False)
+        Me.TabPage3.PerformLayout()
         Me.ResumeLayout(False)
         Me.PerformLayout()
 
@@ -216,13 +255,12 @@ Partial Class Main_frame
     Friend WithEvents AboutToolStripMenuItem As ToolStripMenuItem
     Friend WithEvents TabControl1 As TabControl
     Friend WithEvents TabPage1 As TabPage
-    Friend WithEvents TabPage2 As TabPage
     Friend WithEvents TabPage3 As TabPage
     Friend WithEvents lbl_title As Label
     Friend WithEvents lbl_author As Label
     Friend WithEvents lbl_section As Label
     Friend WithEvents lbl_info As Label
-    Friend WithEvents Button1 As Button
+    Friend WithEvents Btn_add As Button
     Friend WithEvents tb_section As TextBox
     Friend WithEvents tb_author As TextBox
     Friend WithEvents tb_title As TextBox
@@ -232,4 +270,10 @@ Partial Class Main_frame
     Friend WithEvents lv_section As ColumnHeader
     Friend WithEvents lv_units As ColumnHeader
     Friend WithEvents ContextMenuStrip1 As ContextMenuStrip
+    Friend WithEvents TabPage2 As TabPage
+    Friend WithEvents btn_search_section As Button
+    Friend WithEvents btn_search_title As Button
+    Friend WithEvents btn_search_author As Button
+    Friend WithEvents tb_search As TextBox
+    Friend WithEvents Label1 As Label
 End Class

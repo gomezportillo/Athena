@@ -3,6 +3,7 @@
     Private _b As Book
     Friend WithEvents listView_contextMenu As New ContextMenu()
     Dim mnuItemRemove As New MenuItem("Delete")
+    Dim mnuItemEdit As New MenuItem("Edit")
 
     Private Sub AboutToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles AboutToolStripMenuItem.Click
         About_form.Show()
@@ -37,7 +38,7 @@
         Next
 
     End Sub
-    Private Sub Button1_Click(sender As Object, e As EventArgs) Handles Button1.Click
+    Private Sub Add_Click(sender As Object, e As EventArgs) Handles Btn_add.Click
         If tb_title.Text <> String.Empty And tb_author.Text <> String.Empty Then
             If tb_section.Text <> String.Empty Then
                 _b = New Book(tb_title.Text, tb_author.Text, tb_section.Text)
@@ -49,7 +50,7 @@
 
             LoadDDBB()
 
-            lbl_info.Text = "Book " & tb_title.Text & "stored correctly"
+            lbl_info.Text = "Book " & tb_title.Text & " stored correctly"
         Else
             lbl_info.Text = "Please insert at least a title and an author"
         End If
@@ -59,10 +60,17 @@
     Private Sub Main_frame_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         LoadDDBB()
 
-        mnuItemRemove.Visible = True
-        listView_contextMenu.MenuItems.Add(mnuItemRemove)
-        AddHandler mnuItemRemove.Click, AddressOf Me.menuItemRemove_Listener
+        Add_listview_contextMenu()
+    End Sub
 
+    Private Sub Add_listview_contextMenu()
+        mnuItemRemove.Visible = True
+        mnuItemEdit.Visible = True
+
+        listView_contextMenu.MenuItems.Add(mnuItemRemove)
+        listView_contextMenu.MenuItems.Add(mnuItemEdit)
+        AddHandler mnuItemRemove.Click, AddressOf Me.menuItemRemove_Listener
+        AddHandler mnuItemEdit.Click, AddressOf Me.menuItemEdit_Listener
     End Sub
 
     Private Sub listView_books_SelectedIndexChanged(sender As Object, e As System.Windows.Forms.MouseEventArgs) Handles listView_books.MouseDown
@@ -91,5 +99,16 @@
                 LoadDDBB()
             End If
         End If
+    End Sub
+
+    Private Sub menuItemEdit_Listener(sender As Object, e As EventArgs)
+        Dim title, author, section, units As String
+        title = listView_books.SelectedItems(0).SubItems(0).Text
+        author = listView_books.SelectedItems(0).SubItems(1).Text
+        section = listView_books.SelectedItems(0).SubItems(2).Text
+        units = listView_books.SelectedItems(0).SubItems(3).Text
+
+        Edit_form.setValues(title, author, section, units)
+        Edit_form.Show()
     End Sub
 End Class
