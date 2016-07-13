@@ -81,6 +81,12 @@
     <Compile Include="About_form.vb">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="Edit_form.Designer.vb">
+      <DependentUpon>Edit_form.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Edit_form.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="Main_form.vb">
       <SubType>Form</SubType>
     </Compile>
@@ -110,6 +116,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="About_form.resx">
       <DependentUpon>About_form.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Edit_form.resx">
+      <DependentUpon>Edit_form.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Main_form.aa.resx">
       <DependentUpon>Main_form.vb</DependentUpon>
@@ -141,18 +150,6 @@
       <LastGenOutput>Settings.Designer.vb</LastGenOutput>
     </None>
     <None Include="App.config" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\logo.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\logo_small.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\close.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\about.png" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\logo_small1.png" />
