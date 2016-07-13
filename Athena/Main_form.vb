@@ -13,7 +13,7 @@
         Me.Close()
     End Sub
 
-    Private Sub LoadDDBB()
+    Public Sub LoadDDBB()
         listView_books.Items.Clear()
 
         _b = New Book()
@@ -106,8 +106,8 @@
         author = listView_books.SelectedItems(0).SubItems(1).Text
         section = listView_books.SelectedItems(0).SubItems(2).Text
         units = listView_books.SelectedItems(0).SubItems(3).Text
-
-        Edit_form.setValues(title, author, section, units)
+        _b = New Book(title, author, section, units)
+        Edit_form.setValues(_b)
         Edit_form.Show()
     End Sub
 End Class
