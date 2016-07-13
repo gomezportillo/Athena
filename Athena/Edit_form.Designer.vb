@@ -31,26 +31,27 @@ Partial Class Edit_form
         Me.lbl_author = New System.Windows.Forms.Label()
         Me.tb_units = New System.Windows.Forms.TextBox()
         Me.lbl_units = New System.Windows.Forms.Label()
-        Me.Button1 = New System.Windows.Forms.Button()
+        Me.btn_update = New System.Windows.Forms.Button()
+        Me.btn_cancel = New System.Windows.Forms.Button()
         Me.SuspendLayout()
         '
         'tb_section
         '
-        Me.tb_section.Location = New System.Drawing.Point(107, 127)
+        Me.tb_section.Location = New System.Drawing.Point(105, 122)
         Me.tb_section.Name = "tb_section"
         Me.tb_section.Size = New System.Drawing.Size(516, 20)
         Me.tb_section.TabIndex = 11
         '
         'tb_author
         '
-        Me.tb_author.Location = New System.Drawing.Point(107, 87)
+        Me.tb_author.Location = New System.Drawing.Point(105, 82)
         Me.tb_author.Name = "tb_author"
         Me.tb_author.Size = New System.Drawing.Size(516, 20)
         Me.tb_author.TabIndex = 10
         '
         'tb_title
         '
-        Me.tb_title.Location = New System.Drawing.Point(107, 44)
+        Me.tb_title.Location = New System.Drawing.Point(105, 39)
         Me.tb_title.Name = "tb_title"
         Me.tb_title.Size = New System.Drawing.Size(516, 20)
         Me.tb_title.TabIndex = 9
@@ -59,7 +60,7 @@ Partial Class Edit_form
         '
         Me.lbl_section.AutoSize = True
         Me.lbl_section.ImeMode = System.Windows.Forms.ImeMode.NoControl
-        Me.lbl_section.Location = New System.Drawing.Point(58, 130)
+        Me.lbl_section.Location = New System.Drawing.Point(56, 125)
         Me.lbl_section.Name = "lbl_section"
         Me.lbl_section.Size = New System.Drawing.Size(43, 13)
         Me.lbl_section.TabIndex = 8
@@ -69,7 +70,7 @@ Partial Class Edit_form
         '
         Me.lbl_title.AutoSize = True
         Me.lbl_title.ImeMode = System.Windows.Forms.ImeMode.NoControl
-        Me.lbl_title.Location = New System.Drawing.Point(74, 47)
+        Me.lbl_title.Location = New System.Drawing.Point(72, 42)
         Me.lbl_title.Name = "lbl_title"
         Me.lbl_title.Size = New System.Drawing.Size(27, 13)
         Me.lbl_title.TabIndex = 7
@@ -79,7 +80,7 @@ Partial Class Edit_form
         '
         Me.lbl_author.AutoSize = True
         Me.lbl_author.ImeMode = System.Windows.Forms.ImeMode.NoControl
-        Me.lbl_author.Location = New System.Drawing.Point(63, 90)
+        Me.lbl_author.Location = New System.Drawing.Point(61, 85)
         Me.lbl_author.Name = "lbl_author"
         Me.lbl_author.Size = New System.Drawing.Size(38, 13)
         Me.lbl_author.TabIndex = 6
@@ -87,7 +88,7 @@ Partial Class Edit_form
         '
         'tb_units
         '
-        Me.tb_units.Location = New System.Drawing.Point(107, 166)
+        Me.tb_units.Location = New System.Drawing.Point(105, 161)
         Me.tb_units.Name = "tb_units"
         Me.tb_units.Size = New System.Drawing.Size(516, 20)
         Me.tb_units.TabIndex = 13
@@ -96,27 +97,37 @@ Partial Class Edit_form
         '
         Me.lbl_units.AutoSize = True
         Me.lbl_units.ImeMode = System.Windows.Forms.ImeMode.NoControl
-        Me.lbl_units.Location = New System.Drawing.Point(58, 169)
+        Me.lbl_units.Location = New System.Drawing.Point(61, 164)
         Me.lbl_units.Name = "lbl_units"
         Me.lbl_units.Size = New System.Drawing.Size(31, 13)
         Me.lbl_units.TabIndex = 12
         Me.lbl_units.Text = "Units"
         '
-        'Button1
+        'btn_update
         '
-        Me.Button1.Location = New System.Drawing.Point(126, 217)
-        Me.Button1.Name = "Button1"
-        Me.Button1.Size = New System.Drawing.Size(156, 38)
-        Me.Button1.TabIndex = 14
-        Me.Button1.Text = "Button1"
-        Me.Button1.UseVisualStyleBackColor = True
+        Me.btn_update.Location = New System.Drawing.Point(142, 212)
+        Me.btn_update.Name = "btn_update"
+        Me.btn_update.Size = New System.Drawing.Size(156, 38)
+        Me.btn_update.TabIndex = 14
+        Me.btn_update.Text = "Update"
+        Me.btn_update.UseVisualStyleBackColor = True
+        '
+        'btn_cancel
+        '
+        Me.btn_cancel.Location = New System.Drawing.Point(421, 212)
+        Me.btn_cancel.Name = "btn_cancel"
+        Me.btn_cancel.Size = New System.Drawing.Size(156, 38)
+        Me.btn_cancel.TabIndex = 15
+        Me.btn_cancel.Text = "Cancel"
+        Me.btn_cancel.UseVisualStyleBackColor = True
         '
         'Edit_form
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.ClientSize = New System.Drawing.Size(691, 291)
-        Me.Controls.Add(Me.Button1)
+        Me.Controls.Add(Me.btn_cancel)
+        Me.Controls.Add(Me.btn_update)
         Me.Controls.Add(Me.tb_units)
         Me.Controls.Add(Me.lbl_units)
         Me.Controls.Add(Me.tb_section)
@@ -141,5 +152,6 @@ Partial Class Edit_form
     Friend WithEvents lbl_author As Label
     Friend WithEvents tb_units As TextBox
     Friend WithEvents lbl_units As Label
-    Friend WithEvents Button1 As Button
+    Friend WithEvents btn_update As Button
+    Friend WithEvents btn_cancel As Button
 End Class

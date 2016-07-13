@@ -1,4 +1,4 @@
-﻿Public Class Main_frame
+﻿Public Class Main_form
 
     Private _b As Book
     Friend WithEvents listView_contextMenu As New ContextMenu()
@@ -38,7 +38,7 @@
         Next
 
     End Sub
-    Private Sub Add_Click(sender As Object, e As EventArgs) Handles Btn_add.Click
+    Private Sub Btn_add_Click(sender As Object, e As EventArgs) Handles Btn_add.Click
         If tb_title.Text <> String.Empty And tb_author.Text <> String.Empty Then
             If tb_section.Text <> String.Empty Then
                 _b = New Book(tb_title.Text, tb_author.Text, tb_section.Text)
@@ -59,16 +59,15 @@
 
     Private Sub Main_frame_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         LoadDDBB()
-
-        Add_listview_contextMenu()
+        Create_listview_contextMenu()
     End Sub
 
-    Private Sub Add_listview_contextMenu()
-        mnuItemRemove.Visible = True
+    Private Sub Create_listview_contextMenu()
         mnuItemEdit.Visible = True
+        mnuItemRemove.Visible = True
 
-        listView_contextMenu.MenuItems.Add(mnuItemRemove)
         listView_contextMenu.MenuItems.Add(mnuItemEdit)
+        listView_contextMenu.MenuItems.Add(mnuItemRemove)
         AddHandler mnuItemRemove.Click, AddressOf Me.menuItemRemove_Listener
         AddHandler mnuItemEdit.Click, AddressOf Me.menuItemEdit_Listener
     End Sub
