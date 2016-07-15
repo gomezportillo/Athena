@@ -6,11 +6,7 @@
         Me.Close()
     End Sub
 
-    Private Sub PictureBox1_Click(sender As Object, e As EventArgs) Handles PictureBox1.Click
-        Process.Start(repostory_address)
-    End Sub
-
-    Private Sub Label2_Click(sender As Object, e As EventArgs) Handles Label2.Click
+    Private Sub Label2_Click(sender As Object, e As EventArgs) Handles Label2.Click, PictureBox1.Click
         Process.Start(repostory_address)
     End Sub
 End Class
