@@ -40,18 +40,17 @@ Partial Class Main_form
         Me.lbl_title = New System.Windows.Forms.Label()
         Me.lbl_author = New System.Windows.Forms.Label()
         Me.TabPage3 = New System.Windows.Forms.TabPage()
+        Me.btn_search_section = New System.Windows.Forms.Button()
+        Me.btn_search_title = New System.Windows.Forms.Button()
+        Me.btn_search_author = New System.Windows.Forms.Button()
+        Me.tb_search = New System.Windows.Forms.TextBox()
+        Me.Label1 = New System.Windows.Forms.Label()
         Me.listView_books = New System.Windows.Forms.ListView()
         Me.lv_title = CType(New System.Windows.Forms.ColumnHeader(), System.Windows.Forms.ColumnHeader)
         Me.lv_author = CType(New System.Windows.Forms.ColumnHeader(), System.Windows.Forms.ColumnHeader)
         Me.lv_section = CType(New System.Windows.Forms.ColumnHeader(), System.Windows.Forms.ColumnHeader)
         Me.lv_units = CType(New System.Windows.Forms.ColumnHeader(), System.Windows.Forms.ColumnHeader)
         Me.lbl_info = New System.Windows.Forms.Label()
-        Me.TabPage2 = New System.Windows.Forms.TabPage()
-        Me.Label1 = New System.Windows.Forms.Label()
-        Me.tb_search = New System.Windows.Forms.TextBox()
-        Me.btn_search_author = New System.Windows.Forms.Button()
-        Me.btn_search_title = New System.Windows.Forms.Button()
-        Me.btn_search_section = New System.Windows.Forms.Button()
         Me.MenuStrip1.SuspendLayout()
         Me.TabControl1.SuspendLayout()
         Me.TabPage1.SuspendLayout()
@@ -96,7 +95,6 @@ Partial Class Main_form
         '
         Me.TabControl1.Controls.Add(Me.TabPage1)
         Me.TabControl1.Controls.Add(Me.TabPage3)
-        Me.TabControl1.Controls.Add(Me.TabPage2)
         resources.ApplyResources(Me.TabControl1, "TabControl1")
         Me.TabControl1.Name = "TabControl1"
         Me.TabControl1.SelectedIndex = 0
@@ -162,6 +160,34 @@ Partial Class Main_form
         Me.TabPage3.Name = "TabPage3"
         Me.TabPage3.UseVisualStyleBackColor = True
         '
+        'btn_search_section
+        '
+        resources.ApplyResources(Me.btn_search_section, "btn_search_section")
+        Me.btn_search_section.Name = "btn_search_section"
+        Me.btn_search_section.UseVisualStyleBackColor = True
+        '
+        'btn_search_title
+        '
+        resources.ApplyResources(Me.btn_search_title, "btn_search_title")
+        Me.btn_search_title.Name = "btn_search_title"
+        Me.btn_search_title.UseVisualStyleBackColor = True
+        '
+        'btn_search_author
+        '
+        resources.ApplyResources(Me.btn_search_author, "btn_search_author")
+        Me.btn_search_author.Name = "btn_search_author"
+        Me.btn_search_author.UseVisualStyleBackColor = True
+        '
+        'tb_search
+        '
+        resources.ApplyResources(Me.tb_search, "tb_search")
+        Me.tb_search.Name = "tb_search"
+        '
+        'Label1
+        '
+        resources.ApplyResources(Me.Label1, "Label1")
+        Me.Label1.Name = "Label1"
+        '
         'listView_books
         '
         Me.listView_books.Columns.AddRange(New System.Windows.Forms.ColumnHeader() {Me.lv_title, Me.lv_author, Me.lv_section, Me.lv_units})
@@ -193,41 +219,7 @@ Partial Class Main_form
         resources.ApplyResources(Me.lbl_info, "lbl_info")
         Me.lbl_info.Name = "lbl_info"
         '
-        'TabPage2
-        '
-        resources.ApplyResources(Me.TabPage2, "TabPage2")
-        Me.TabPage2.Name = "TabPage2"
-        Me.TabPage2.UseVisualStyleBackColor = True
-        '
-        'Label1
-        '
-        resources.ApplyResources(Me.Label1, "Label1")
-        Me.Label1.Name = "Label1"
-        '
-        'tb_search
-        '
-        resources.ApplyResources(Me.tb_search, "tb_search")
-        Me.tb_search.Name = "tb_search"
-        '
-        'btn_search_author
-        '
-        resources.ApplyResources(Me.btn_search_author, "btn_search_author")
-        Me.btn_search_author.Name = "btn_search_author"
-        Me.btn_search_author.UseVisualStyleBackColor = True
-        '
-        'btn_search_title
-        '
-        resources.ApplyResources(Me.btn_search_title, "btn_search_title")
-        Me.btn_search_title.Name = "btn_search_title"
-        Me.btn_search_title.UseVisualStyleBackColor = True
-        '
-        'btn_search_section
-        '
-        resources.ApplyResources(Me.btn_search_section, "btn_search_section")
-        Me.btn_search_section.Name = "btn_search_section"
-        Me.btn_search_section.UseVisualStyleBackColor = True
-        '
-        'Main_frame
+        'Main_form
         '
         resources.ApplyResources(Me, "$this")
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
@@ -235,7 +227,7 @@ Partial Class Main_form
         Me.Controls.Add(Me.MenuStrip1)
         Me.Controls.Add(Me.TabControl1)
         Me.MainMenuStrip = Me.MenuStrip1
-        Me.Name = "Main_frame"
+        Me.Name = "Main_form"
         Me.MenuStrip1.ResumeLayout(False)
         Me.MenuStrip1.PerformLayout()
         Me.TabControl1.ResumeLayout(False)
@@ -270,7 +262,6 @@ Partial Class Main_form
     Friend WithEvents lv_section As ColumnHeader
     Friend WithEvents lv_units As ColumnHeader
     Friend WithEvents ContextMenuStrip1 As ContextMenuStrip
-    Friend WithEvents TabPage2 As TabPage
     Friend WithEvents btn_search_section As Button
     Friend WithEvents btn_search_title As Button
     Friend WithEvents btn_search_author As Button

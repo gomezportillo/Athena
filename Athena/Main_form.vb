@@ -140,6 +140,10 @@
         listView_books.ListViewItemSorter = New ListViewItemComparer(e.Column, listView_books.Sorting)
     End Sub
 
+    Private Sub btn_search_title_Click(sender As Object, e As EventArgs) Handles btn_search_title.Click
+        Dim token = tb_search.Text
+
+    End Sub
 End Class
 
 
