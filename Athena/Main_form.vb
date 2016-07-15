@@ -60,8 +60,23 @@
     End Sub
 
     Private Sub Main_frame_Load(sender As Object, e As EventArgs) Handles MyBase.Load
-        LoadDDBB()
+        Try
+            LoadDDBB()
+        Catch ex As Exception
+            MessageBox.Show("No database was found. Please place Athena.accdb on the same directory than this program", "Error")
+            Me.Close()
+        End Try
+
         Create_listview_contextMenu()
+    End Sub
+
+    Private Sub btn_search_title_Click(sender As Object, e As EventArgs) Handles btn_search_title.Click
+        ' Call FindItemWithText with the contents of the textbox
+        Dim foundItem As ListViewItem = listView_books.FindItemWithText(tb_search.Text)
+
+        If (foundItem IsNot Nothing) Then
+            listView_books.TopItem = foundItem
+        End If
     End Sub
 
     Private Sub Create_listview_contextMenu()
@@ -117,6 +132,7 @@
 
     'Extracted from https://msdn.microsoft.com/en-us/library/ms996467.aspx
     Private Sub listViewBooks_ColumnClick(sender As Object, e As System.Windows.Forms.ColumnClickEventArgs)
+        listView_books.BeginUpdate()
         ' Determine whether the column is the same as the last column clicked.
         If e.Column <> sortColumn Then
             ' Set the sort column to the new column.
@@ -132,17 +148,11 @@
             End If
         End If
         ' Call the sort method to manually sort.
-        listView_books.BeginUpdate()
         listView_books.Sort()
-        listView_books.EndUpdate()
         ' Set the ListViewItemSorter property to a new ListViewItemComparer
         ' object.
         listView_books.ListViewItemSorter = New ListViewItemComparer(e.Column, listView_books.Sorting)
-    End Sub
-
-    Private Sub btn_search_title_Click(sender As Object, e As EventArgs) Handles btn_search_title.Click
-        Dim token = tb_search.Text
-
+        listView_books.EndUpdate()
     End Sub
 End Class
 

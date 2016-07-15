@@ -13,7 +13,6 @@
         b.author = reader.GetValue(1)
         b.section = reader.GetValue(2)
         b.units = CInt(reader.GetValue(3))
-
     End Sub
 
 
@@ -47,7 +46,6 @@
         End Try
 
     End Function
-
 
     Public Sub readAll(ByRef b As Book) 'returns an OleDBDataReader data structure
         Dim comm As String = "SELECT * FROM Books ORDER BY Author;"
