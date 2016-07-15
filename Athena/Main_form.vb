@@ -4,6 +4,8 @@
     Friend WithEvents listView_contextMenu As New ContextMenu()
     Dim mnuItemRemove As New MenuItem("Delete")
     Dim mnuItemEdit As New MenuItem("Edit")
+    Dim sortColumn As Integer = -1
+
 
     Private Sub AboutToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles AboutToolStripMenuItem.Click
         About_form.Show()
@@ -70,6 +72,8 @@
         listView_contextMenu.MenuItems.Add(mnuItemRemove)
         AddHandler mnuItemRemove.Click, AddressOf Me.menuItemRemove_Listener
         AddHandler mnuItemEdit.Click, AddressOf Me.menuItemEdit_Listener
+
+        AddHandler listView_books.ColumnClick, AddressOf Me.listViewBooks_ColumnClick
     End Sub
 
     Private Sub listView_books_SelectedIndexChanged(sender As Object, e As System.Windows.Forms.MouseEventArgs) Handles listView_books.MouseDown
@@ -110,4 +114,62 @@
         Edit_form.setValues(_b)
         Edit_form.Show()
     End Sub
+
+    'Extracted from https://msdn.microsoft.com/en-us/library/ms996467.aspx
+    Private Sub listViewBooks_ColumnClick(sender As Object, e As System.Windows.Forms.ColumnClickEventArgs)
+        ' Determine whether the column is the same as the last column clicked.
+        If e.Column <> sortColumn Then
+            ' Set the sort column to the new column.
+            sortColumn = e.Column
+            ' Set the sort order to ascending by default.
+            listView_books.Sorting = SortOrder.Ascending
+        Else
+            ' Determine what the last sort order was and change it.
+            If listView_books.Sorting = SortOrder.Ascending Then
+                listView_books.Sorting = SortOrder.Descending
+            Else
+                listView_books.Sorting = SortOrder.Ascending
+            End If
+        End If
+        ' Call the sort method to manually sort.
+        listView_books.BeginUpdate()
+        listView_books.Sort()
+        listView_books.EndUpdate()
+        ' Set the ListViewItemSorter property to a new ListViewItemComparer
+        ' object.
+        listView_books.ListViewItemSorter = New ListViewItemComparer(e.Column, listView_books.Sorting)
+    End Sub
+
+End Class
+
+
+Class ListViewItemComparer
+    Implements IComparer
+    Private col As Integer
+    Private order As SortOrder
+
+    Public Sub New()
+        col = 0
+        order = SortOrder.Ascending
+    End Sub
+
+    Public Sub New(column As Integer, order As SortOrder)
+        col = column
+        Me.order = order
+    End Sub
+
+    Public Function Compare(x As Object, y As Object) As Integer _
+                        Implements System.Collections.IComparer.Compare
+        Dim returnVal As Integer = -1
+        returnVal = [String].Compare(CType(x,
+                        ListViewItem).SubItems(col).Text,
+                        CType(y, ListViewItem).SubItems(col).Text)
+        ' Determine whether the sort order is descending.
+        If order = SortOrder.Descending Then
+            ' Invert the value returned by String.Compare.
+            returnVal *= -1
+        End If
+
+        Return returnVal
+    End Function
 End Class
