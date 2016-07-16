@@ -29,8 +29,10 @@ Edit will prompt a new form in where the user will be able to edit the data of t
   <img src=misc/images/screenshots/edit_book.png?raw=true" alt="Edit book"/>
 </p>
 
-## Further develop
+## Further development
 Athena is module-based. As it is an open-source project, you can add new capabilities by forking this repository, opening it with [Visual Studio](https://www.visualstudio.com/) and adding new functionality to the software or new tables to the database (you will need to have [Microsoft Access](https://products.office.com/es-es/access) installed to do so).
 
 ## Issues
 You may be warned if you do not have installed the x86 Microsoft OLEDB driver for working with the database. You can find it [here](misc/drivers_OSx86/AccessDatabaseEngine.exe). Just download, install it and launch Athena again.
+
+Should you find any error or think on a welcome capability, please do not hesitate to log it on the [issues page](https://github.com/gomezportillo/Athena/issues) or to contact me at [pedroma.almagro@gmail.com](mailto:pedroma.almagro@gmail.com)
