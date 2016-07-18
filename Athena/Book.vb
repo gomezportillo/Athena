@@ -6,8 +6,8 @@
     Property dao As DAOBook
 
     Public Sub New(ByVal title As String, ByVal author As String)
-        Me._title = StrConv(title, vbProperCase) 'first of sentence to upper
-        Me._author = System.Globalization.CultureInfo.CurrentCulture.TextInfo.ToTitleCase(author) 'first of each word to upper
+        Me._title = Me.FirstToUpper(title)
+        Me._author = System.Globalization.CultureInfo.CurrentCulture.TextInfo.ToTitleCase(author) 'capitalized first letter of each word
         Me._section = String.Empty
         Me._units = 0
         Me._dao = New DAOBook()
@@ -15,7 +15,7 @@
 
     Public Sub New(ByVal title As String, ByVal author As String, ByVal section As String)
         Me.New(title, author)
-        Me._section = StrConv(section, vbProperCase)
+        Me._section = Me.FirstToUpper(section)
     End Sub
 
     Public Sub New(ByVal title As String, ByVal author As String, ByVal section As String, ByVal units As Integer)
@@ -52,4 +52,7 @@
         Return Me.title + " | " + Me.author + " | " + Me.section + " | " + CStr(Me.units)
     End Function
 
+    Private Function FirstToUpper(ByRef name As String) As String
+        Return name.Substring(0, 1).ToUpper() + name.Substring(1)
+    End Function
 End Class
