@@ -5,6 +5,9 @@
     Dim mnuItemRemove As New MenuItem("Delete")
     Dim mnuItemEdit As New MenuItem("Edit")
     Dim sortColumn As Integer = -1
+    Dim autocomplete_title As AutoCompleteStringCollection
+    Dim autocomplete_author As AutoCompleteStringCollection
+    Dim autocomplete_section As AutoCompleteStringCollection
 
 
     Private Sub AboutToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles AboutToolStripMenuItem.Click
@@ -19,7 +22,6 @@
         listView_books.Items.Clear()
 
         _b = New Book()
-
         Try
             _b.readAll()
         Catch ex As Exception
@@ -28,17 +30,49 @@
         End Try
 
         Dim item As ListViewItem
+        Dim title_list, author_list, section_list As New List(Of String)
+
+
         For Each bAux As Book In _b.dao._books
             item = New ListViewItem(bAux.title)
             item.SubItems.Add(bAux.author)
             item.SubItems.Add(bAux.section)
             item.SubItems.Add(CStr(bAux.units))
-
             listView_books.Items.Add(item)
 
-            lbl_info.Text = "List of books updated"
+            title_list.Add(bAux.title)
+            author_list.Add(bAux.author)
+            section_list.Add(bAux.section)
         Next
 
+        Me.Fill_TexBox_Autocomplete(title_list, author_list, section_list)
+        lbl_info.Text = "List of books updated"
+    End Sub
+
+    Private Sub Fill_TexBox_Autocomplete(ByVal title_list As List(Of String), ByVal author_list As List(Of String), ByVal section_list As List(Of String))
+        autocomplete_title = New AutoCompleteStringCollection()
+        autocomplete_title.AddRange(title_list.ToArray())
+        With tb_title
+            .AutoCompleteMode = AutoCompleteMode.SuggestAppend
+            .AutoCompleteSource = AutoCompleteSource.CustomSource
+            .AutoCompleteCustomSource = autocomplete_title
+        End With
+
+        autocomplete_author = New AutoCompleteStringCollection()
+        autocomplete_author.AddRange(author_list.ToArray())
+        With tb_author
+            .AutoCompleteMode = AutoCompleteMode.SuggestAppend
+            .AutoCompleteSource = AutoCompleteSource.CustomSource
+            .AutoCompleteCustomSource = autocomplete_author
+        End With
+
+        autocomplete_section = New AutoCompleteStringCollection()
+        autocomplete_section.AddRange(section_list.ToArray())
+        With tb_section
+            .AutoCompleteMode = AutoCompleteMode.SuggestAppend
+            .AutoCompleteSource = AutoCompleteSource.CustomSource
+            .AutoCompleteCustomSource = autocomplete_section
+        End With
     End Sub
     Private Sub Btn_add_Click(sender As Object, e As EventArgs) Handles Btn_add.Click
         If tb_title.Text <> String.Empty And tb_author.Text <> String.Empty Then
