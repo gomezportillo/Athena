@@ -1,6 +1,6 @@
 ﻿Public Class About_form
     Dim repostory_address As String = "http://github.com/gomezportillo/athena"
-    Dim latest_build As String = "19.XII.2016"
+    Dim latest_build As String = "19.VII.2016"
 
     Private Sub Button1_Click(sender As Object, e As EventArgs) Handles Button1.Click
         Me.Close()
