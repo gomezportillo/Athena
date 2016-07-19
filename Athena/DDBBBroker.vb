@@ -1,13 +1,14 @@
 ﻿Imports Microsoft.VisualBasic
 
 Public Class DDBBBroker
-    Private Shared _connection_driver As String = "Provider=Microsoft.ACE.OLEDB.12.0; Data Source=Athena.accdb"
+    Private _connection_driver As String = "Provider=Microsoft.ACE.OLEDB.12.0;"
+    Private _data_source As String = "Data Source=Athena.accdb"
     Private Shared _connection As OleDb.OleDbConnection
     Private Shared _instance As DDBBBroker
 
 
     Private Sub New()
-        DDBBBroker._connection = New OleDb.OleDbConnection(_connection_driver)
+        DDBBBroker._connection = New OleDb.OleDbConnection(_connection_driver + _data_source)
         DDBBBroker._connection.Open()
     End Sub
 

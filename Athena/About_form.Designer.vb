@@ -25,9 +25,9 @@ Partial Class About_form
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(About_form))
         Me.lbl_about = New System.Windows.Forms.Label()
         Me.Button1 = New System.Windows.Forms.Button()
-        Me.Label1 = New System.Windows.Forms.Label()
+        Me.lbl_info2 = New System.Windows.Forms.Label()
         Me.PictureBox1 = New System.Windows.Forms.PictureBox()
-        Me.Label2 = New System.Windows.Forms.Label()
+        Me.lbl_link = New System.Windows.Forms.Label()
         CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
@@ -42,10 +42,10 @@ Partial Class About_form
         Me.Button1.Name = "Button1"
         Me.Button1.UseVisualStyleBackColor = True
         '
-        'Label1
+        'lbl_info2
         '
-        resources.ApplyResources(Me.Label1, "Label1")
-        Me.Label1.Name = "Label1"
+        resources.ApplyResources(Me.lbl_info2, "lbl_info2")
+        Me.lbl_info2.Name = "lbl_info2"
         '
         'PictureBox1
         '
@@ -55,20 +55,20 @@ Partial Class About_form
         Me.PictureBox1.Name = "PictureBox1"
         Me.PictureBox1.TabStop = False
         '
-        'Label2
+        'lbl_link
         '
-        resources.ApplyResources(Me.Label2, "Label2")
-        Me.Label2.Cursor = System.Windows.Forms.Cursors.Hand
-        Me.Label2.ForeColor = System.Drawing.SystemColors.HotTrack
-        Me.Label2.Name = "Label2"
+        resources.ApplyResources(Me.lbl_link, "lbl_link")
+        Me.lbl_link.Cursor = System.Windows.Forms.Cursors.Hand
+        Me.lbl_link.ForeColor = System.Drawing.SystemColors.HotTrack
+        Me.lbl_link.Name = "lbl_link"
         '
         'About_form
         '
         resources.ApplyResources(Me, "$this")
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.Controls.Add(Me.Label2)
+        Me.Controls.Add(Me.lbl_link)
         Me.Controls.Add(Me.PictureBox1)
-        Me.Controls.Add(Me.Label1)
+        Me.Controls.Add(Me.lbl_info2)
         Me.Controls.Add(Me.Button1)
         Me.Controls.Add(Me.lbl_about)
         Me.Name = "About_form"
@@ -80,7 +80,7 @@ Partial Class About_form
 
     Friend WithEvents lbl_about As Label
     Friend WithEvents Button1 As Button
-    Friend WithEvents Label1 As Label
+    Friend WithEvents lbl_info2 As Label
     Friend WithEvents PictureBox1 As PictureBox
-    Friend WithEvents Label2 As Label
+    Friend WithEvents lbl_link As Label
 End Class
