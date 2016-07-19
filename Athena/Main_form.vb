@@ -19,6 +19,52 @@
         Me.Close()
     End Sub
 
+    Private Sub Main_frame_Load(sender As Object, e As EventArgs) Handles MyBase.Load
+        Try
+            LoadDDBB()
+        Catch ex As Exception
+            MessageBox.Show("No database was found. Please place Athena.accdb on the same directory than this program", "Error")
+            Me.Close()
+        End Try
+
+        tb_search.AutoCompleteCustomSource = tb_title.AutoCompleteCustomSource
+
+        Create_listview_contextMenu()
+        search_by = 0
+    End Sub
+
+    Private Sub Btn_add_Click(sender As Object, e As EventArgs) Handles Btn_add.Click
+        If tb_title.Text <> String.Empty And tb_author.Text <> String.Empty Then
+            If tb_section.Text <> String.Empty Then
+                _b = New Book(tb_title.Text, tb_author.Text, tb_section.Text)
+            Else
+                _b = New Book(tb_title.Text, tb_author.Text)
+            End If
+
+            _b.create()
+
+            LoadDDBB()
+
+            lbl_info.Text = "Book " & tb_title.Text & " stored correctly"
+
+            tb_title.Text = String.Empty
+            tb_author.Text = String.Empty
+            tb_section.Text = String.Empty
+        Else
+            lbl_info.Text = "Please insert at least a title and an author"
+        End If
+    End Sub
+
+    Private Sub listView_books_SelectedIndexChanged(sender As Object, e As System.Windows.Forms.MouseEventArgs) Handles listView_books.MouseDown
+        If e.Button = MouseButtons.Right Then
+            If listView_books.GetItemAt(e.X, e.Y) IsNot Nothing Then
+                listView_books.GetItemAt(e.X, e.Y).Selected = True
+                listView_contextMenu.Show(listView_books, New Point(e.X, e.Y))
+            End If
+        End If
+    End Sub
+
+    'Subprocedure for loading the whole database onto the listview and in the textbox suggestions
     Public Sub LoadDDBB()
         listView_books.Items.Clear()
 
@@ -45,107 +91,39 @@
             section_list.Add(bAux.section)
         Next
 
-        Me.Fill_TexBox_Autocomplete(title_list, author_list, section_list)
+        Fill_TexBox_Autocomplete(title_list, author_list, section_list)
         lbl_info.Text = "List of books updated"
     End Sub
 
+    'Subprocedure executed for assigning the data readed from the ddbb to the textbox suggestions 
     Private Sub Fill_TexBox_Autocomplete(ByVal title_list As List(Of String), ByVal author_list As List(Of String), ByVal section_list As List(Of String))
         autocomplete_title = New AutoCompleteStringCollection()
         autocomplete_title.AddRange(title_list.ToArray())
-        With tb_title
-            .AutoCompleteMode = AutoCompleteMode.SuggestAppend
-            .AutoCompleteSource = AutoCompleteSource.CustomSource
-            .AutoCompleteCustomSource = autocomplete_title
-        End With
+        tb_title.AutoCompleteCustomSource = autocomplete_title
 
         autocomplete_author = New AutoCompleteStringCollection()
         autocomplete_author.AddRange(author_list.ToArray())
-        With tb_author
-            .AutoCompleteMode = AutoCompleteMode.SuggestAppend
-            .AutoCompleteSource = AutoCompleteSource.CustomSource
-            .AutoCompleteCustomSource = autocomplete_author
-        End With
+        tb_author.AutoCompleteCustomSource = autocomplete_author
 
         autocomplete_section = New AutoCompleteStringCollection()
         autocomplete_section.AddRange(section_list.ToArray())
-        With tb_section
-            .AutoCompleteMode = AutoCompleteMode.SuggestAppend
-            .AutoCompleteSource = AutoCompleteSource.CustomSource
-            .AutoCompleteCustomSource = autocomplete_section
-        End With
+        tb_section.AutoCompleteCustomSource = autocomplete_section
     End Sub
 
-    Private Sub Btn_add_Click(sender As Object, e As EventArgs) Handles Btn_add.Click
-        If tb_title.Text <> String.Empty And tb_author.Text <> String.Empty Then
-            If tb_section.Text <> String.Empty Then
-                _b = New Book(tb_title.Text, tb_author.Text, tb_section.Text)
-            Else
-                _b = New Book(tb_title.Text, tb_author.Text)
-            End If
-
-            _b.create()
-
-            LoadDDBB()
-
-            lbl_info.Text = "Book " & tb_title.Text & " stored correctly"
-
-            tb_title.Text = String.Empty
-            tb_author.Text = String.Empty
-            tb_section.Text = String.Empty
-        Else
-            lbl_info.Text = "Please insert at least a title and an author"
-        End If
-
-    End Sub
-
-    Private Sub Main_frame_Load(sender As Object, e As EventArgs) Handles MyBase.Load
-        Try
-            LoadDDBB()
-        Catch ex As Exception
-            MessageBox.Show("No database was found. Please place Athena.accdb on the same directory than this program", "Error")
-            Me.Close()
-        End Try
-
-        With tb_search
-            .AutoCompleteMode = AutoCompleteMode.SuggestAppend
-            .AutoCompleteSource = AutoCompleteSource.CustomSource
-            .AutoCompleteCustomSource = tb_title.AutoCompleteCustomSource
-        End With
-
-        Create_listview_contextMenu()
-        Me.search_by = 0
-    End Sub
-
-    Private Sub btn_search_title_Click(sender As Object, e As EventArgs)
-        ' Call FindItemWithText with the contents of the textbox
-        Dim foundItem As ListViewItem = listView_books.FindItemWithText(tb_search.Text)
-
-        If (foundItem IsNot Nothing) Then
-            listView_books.TopItem = foundItem
-        End If
-    End Sub
-
+    'Subprocess for creating the context menu (edit & delete) for the list view
     Private Sub Create_listview_contextMenu()
         mnuItemEdit.Visible = True
         mnuItemRemove.Visible = True
 
         listView_contextMenu.MenuItems.Add(mnuItemEdit)
         listView_contextMenu.MenuItems.Add(mnuItemRemove)
+
         AddHandler mnuItemRemove.Click, AddressOf Me.menuItemRemove_Listener
         AddHandler mnuItemEdit.Click, AddressOf Me.menuItemEdit_Listener
-
         AddHandler listView_books.ColumnClick, AddressOf Me.listViewBooks_ColumnClick
     End Sub
 
-    Private Sub listView_books_SelectedIndexChanged(sender As Object, e As System.Windows.Forms.MouseEventArgs) Handles listView_books.MouseDown
-        If e.Button = MouseButtons.Right Then
-            If listView_books.GetItemAt(e.X, e.Y) IsNot Nothing Then
-                listView_books.GetItemAt(e.X, e.Y).Selected = True
-                listView_contextMenu.Show(listView_books, New Point(e.X, e.Y))
-            End If
-        End If
-    End Sub
-
+    'Method called when the option 'Remove' is selected from the list view context menu
     Private Sub menuItemRemove_Listener(sender As Object, e As EventArgs)
         Dim title, author, msg As String
 
@@ -165,18 +143,58 @@
         End If
     End Sub
 
+    'Method for launching the 'Edit' form
     Private Sub menuItemEdit_Listener(sender As Object, e As EventArgs)
         Dim title, author, section, units As String
+
         title = listView_books.SelectedItems(0).SubItems(0).Text
         author = listView_books.SelectedItems(0).SubItems(1).Text
         section = listView_books.SelectedItems(0).SubItems(2).Text
         units = listView_books.SelectedItems(0).SubItems(3).Text
+
         _b = New Book(title, author, section, units)
+
         Edit_form.setValues(_b)
         Edit_form.Show()
     End Sub
 
+    'Method for searching on the list view at the same time the textbox is written
+    Private Sub tb_search_TextChanged(sender As Object, e As EventArgs) Handles tb_search.TextChanged
+        Dim item_text As String
+        Dim search_term As String = UnAccent(tb_search.Text.ToLower())
+
+        listView_books.BeginUpdate()
+
+        LoadDDBB()
+
+        For Each new_item As ListViewItem In listView_books.Items
+            item_text = UnAccent(new_item.SubItems(search_by).Text.ToLower())
+            If Not item_text.Contains(search_term) Then
+                listView_books.Items.Remove(new_item)
+            End If
+        Next
+
+        listView_books.EndUpdate()
+    End Sub
+
+    'Radio button listeners that change the type of search and the search textbox's suggestions
+    Private Sub rb_title_CheckedChanged(sender As Object, e As EventArgs) Handles rb_title.CheckedChanged
+        tb_search.AutoCompleteCustomSource = tb_title.AutoCompleteCustomSource
+        search_by = 0
+    End Sub
+
+    Private Sub rb_author_CheckedChanged(sender As Object, e As EventArgs) Handles rb_author.CheckedChanged
+        tb_search.AutoCompleteCustomSource = tb_author.AutoCompleteCustomSource
+        search_by = 1
+    End Sub
+
+    Private Sub rb_section_CheckedChanged(sender As Object, e As EventArgs) Handles rb_section.CheckedChanged
+        tb_search.AutoCompleteCustomSource = tb_section.AutoCompleteCustomSource
+        search_by = 2
+    End Sub
+
     'Extracted from https://msdn.microsoft.com/en-us/library/ms996467.aspx
+    'Used for alphabetically ordering the list view when the name of the column is clicked
     Private Sub listViewBooks_ColumnClick(sender As Object, e As System.Windows.Forms.ColumnClickEventArgs)
         listView_books.BeginUpdate()
         ' Determine whether the column is the same as the last column clicked.
@@ -201,52 +219,8 @@
         listView_books.EndUpdate()
     End Sub
 
-    Private Sub rb_title_CheckedChanged(sender As Object, e As EventArgs) Handles rb_title.CheckedChanged
-        With tb_search
-            .AutoCompleteMode = AutoCompleteMode.SuggestAppend
-            .AutoCompleteSource = AutoCompleteSource.CustomSource
-            .AutoCompleteCustomSource = tb_title.AutoCompleteCustomSource
-        End With
-        Me.search_by = 0
-    End Sub
-
-    Private Sub rb_author_CheckedChanged(sender As Object, e As EventArgs) Handles rb_author.CheckedChanged
-        With tb_search
-            .AutoCompleteMode = AutoCompleteMode.SuggestAppend
-            .AutoCompleteSource = AutoCompleteSource.CustomSource
-            .AutoCompleteCustomSource = tb_author.AutoCompleteCustomSource
-        End With
-        Me.search_by = 1
-    End Sub
-
-    Private Sub rb_section_CheckedChanged(sender As Object, e As EventArgs) Handles rb_section.CheckedChanged
-        With tb_search
-            .AutoCompleteMode = AutoCompleteMode.SuggestAppend
-            .AutoCompleteSource = AutoCompleteSource.CustomSource
-            .AutoCompleteCustomSource = tb_section.AutoCompleteCustomSource
-        End With
-        Me.search_by = 2
-    End Sub
-
-    Private Sub btn_search_Click(sender As Object, e As EventArgs) Handles btn_search.Click
-        Dim item_text As String
-        Dim search_term As String = Me.UnAccent(tb_search.Text.ToLower())
-
-        listView_books.BeginUpdate()
-
-        LoadDDBB()
-
-        For Each new_item As ListViewItem In listView_books.Items
-            item_text = Me.UnAccent(new_item.SubItems(Me.search_by).Text.ToLower())
-            If Not item_text.Contains(search_term) Then
-                listView_books.Items.Remove(new_item)
-            End If
-        Next
-
-        listView_books.EndUpdate()
-    End Sub
-
-    'https://social.msdn.microsoft.com/Forums/vstudio/en-US/8392f4d3-e016-4337-9d37-fb20fecd1425/converting-string-with-accented-characters-to-nonaccented-equivalent?forum=vbgeneral
+    'Extracted from https://social.msdn.microsoft.com/Forums/vstudio/en-US/8392f4d3-e016-4337-9d37-fb20fecd1425/converting-string-with-accented-characters-to-nonaccented-equivalent?forum=vbgeneral
+    'Used for removing accents from strings
     Public Function UnAccent(ByVal aString As String) As String
         Dim toReplace() As Char = "àèìòùÀÈÌÒÙ äëïöüÄËÏÖÜ âêîôûÂÊÎÔÛ áéíóúÁÉÍÓÚðÐýÝ ãñõÃÑÕšŠžŽçÇåÅøØ".ToCharArray
         Dim replaceChars() As Char = "aeiouAEIOU aeiouAEIOU aeiouAEIOU aeiouAEIOUdDyY anoANOsSzZcCaAoO".ToCharArray
@@ -256,12 +230,10 @@
         Return aString
     End Function
 
-    Private Sub tb_search_TextChanged(sender As Object, e As EventArgs) Handles tb_search.TextChanged
-        btn_search.PerformClick()
-    End Sub
 End Class
 
 
+'Class used for ordering the listview when the title bar is clicked
 Class ListViewItemComparer
     Implements IComparer
     Private col As Integer
@@ -272,9 +244,9 @@ Class ListViewItemComparer
         order = SortOrder.Ascending
     End Sub
 
-    Public Sub New(column As Integer, order As SortOrder)
+    Public Sub New(column As Integer, ord As SortOrder)
         col = column
-        Me.order = order
+        order = ord
     End Sub
 
     Public Function Compare(x As Object, y As Object) As Integer Implements System.Collections.IComparer.Compare

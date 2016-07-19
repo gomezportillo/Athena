@@ -44,7 +44,6 @@ Partial Class Main_form
         Me.rb_section = New System.Windows.Forms.RadioButton()
         Me.rb_author = New System.Windows.Forms.RadioButton()
         Me.rb_title = New System.Windows.Forms.RadioButton()
-        Me.btn_search = New System.Windows.Forms.Button()
         Me.tb_search = New System.Windows.Forms.TextBox()
         Me.listView_books = New System.Windows.Forms.ListView()
         Me.lv_title = CType(New System.Windows.Forms.ColumnHeader(), System.Windows.Forms.ColumnHeader)
@@ -122,16 +121,22 @@ Partial Class Main_form
         '
         'tb_section
         '
+        Me.tb_section.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.SuggestAppend
+        Me.tb_section.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.CustomSource
         resources.ApplyResources(Me.tb_section, "tb_section")
         Me.tb_section.Name = "tb_section"
         '
         'tb_author
         '
+        Me.tb_author.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.SuggestAppend
+        Me.tb_author.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.CustomSource
         resources.ApplyResources(Me.tb_author, "tb_author")
         Me.tb_author.Name = "tb_author"
         '
         'tb_title
         '
+        Me.tb_title.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.SuggestAppend
+        Me.tb_title.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.CustomSource
         resources.ApplyResources(Me.tb_title, "tb_title")
         Me.tb_title.Name = "tb_title"
         '
@@ -163,7 +168,6 @@ Partial Class Main_form
         Me.GroupBox1.Controls.Add(Me.rb_section)
         Me.GroupBox1.Controls.Add(Me.rb_author)
         Me.GroupBox1.Controls.Add(Me.rb_title)
-        Me.GroupBox1.Controls.Add(Me.btn_search)
         Me.GroupBox1.Controls.Add(Me.tb_search)
         resources.ApplyResources(Me.GroupBox1, "GroupBox1")
         Me.GroupBox1.Name = "GroupBox1"
@@ -189,14 +193,10 @@ Partial Class Main_form
         Me.rb_title.TabStop = True
         Me.rb_title.UseVisualStyleBackColor = True
         '
-        'btn_search
-        '
-        resources.ApplyResources(Me.btn_search, "btn_search")
-        Me.btn_search.Name = "btn_search"
-        Me.btn_search.UseVisualStyleBackColor = True
-        '
         'tb_search
         '
+        Me.tb_search.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.SuggestAppend
+        Me.tb_search.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.CustomSource
         resources.ApplyResources(Me.tb_search, "tb_search")
         Me.tb_search.Name = "tb_search"
         '
@@ -277,7 +277,6 @@ Partial Class Main_form
     Friend WithEvents ContextMenuStrip1 As ContextMenuStrip
     Friend WithEvents tb_search As TextBox
     Friend WithEvents GroupBox1 As GroupBox
-    Friend WithEvents btn_search As Button
     Friend WithEvents rb_section As RadioButton
     Friend WithEvents rb_author As RadioButton
     Friend WithEvents rb_title As RadioButton
