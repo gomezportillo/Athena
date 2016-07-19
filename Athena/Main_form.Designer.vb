@@ -40,11 +40,12 @@ Partial Class Main_form
         Me.lbl_title = New System.Windows.Forms.Label()
         Me.lbl_author = New System.Windows.Forms.Label()
         Me.TabPage3 = New System.Windows.Forms.TabPage()
-        Me.btn_search_section = New System.Windows.Forms.Button()
-        Me.btn_search_title = New System.Windows.Forms.Button()
-        Me.btn_search_author = New System.Windows.Forms.Button()
+        Me.GroupBox1 = New System.Windows.Forms.GroupBox()
+        Me.rb_section = New System.Windows.Forms.RadioButton()
+        Me.rb_author = New System.Windows.Forms.RadioButton()
+        Me.rb_title = New System.Windows.Forms.RadioButton()
+        Me.btn_search = New System.Windows.Forms.Button()
         Me.tb_search = New System.Windows.Forms.TextBox()
-        Me.Label1 = New System.Windows.Forms.Label()
         Me.listView_books = New System.Windows.Forms.ListView()
         Me.lv_title = CType(New System.Windows.Forms.ColumnHeader(), System.Windows.Forms.ColumnHeader)
         Me.lv_author = CType(New System.Windows.Forms.ColumnHeader(), System.Windows.Forms.ColumnHeader)
@@ -55,6 +56,7 @@ Partial Class Main_form
         Me.TabControl1.SuspendLayout()
         Me.TabPage1.SuspendLayout()
         Me.TabPage3.SuspendLayout()
+        Me.GroupBox1.SuspendLayout()
         Me.SuspendLayout()
         '
         'MenuStrip1
@@ -150,43 +152,53 @@ Partial Class Main_form
         '
         'TabPage3
         '
-        Me.TabPage3.Controls.Add(Me.btn_search_section)
-        Me.TabPage3.Controls.Add(Me.btn_search_title)
-        Me.TabPage3.Controls.Add(Me.btn_search_author)
-        Me.TabPage3.Controls.Add(Me.tb_search)
-        Me.TabPage3.Controls.Add(Me.Label1)
+        Me.TabPage3.Controls.Add(Me.GroupBox1)
         Me.TabPage3.Controls.Add(Me.listView_books)
         resources.ApplyResources(Me.TabPage3, "TabPage3")
         Me.TabPage3.Name = "TabPage3"
         Me.TabPage3.UseVisualStyleBackColor = True
         '
-        'btn_search_section
+        'GroupBox1
         '
-        resources.ApplyResources(Me.btn_search_section, "btn_search_section")
-        Me.btn_search_section.Name = "btn_search_section"
-        Me.btn_search_section.UseVisualStyleBackColor = True
+        Me.GroupBox1.Controls.Add(Me.rb_section)
+        Me.GroupBox1.Controls.Add(Me.rb_author)
+        Me.GroupBox1.Controls.Add(Me.rb_title)
+        Me.GroupBox1.Controls.Add(Me.btn_search)
+        Me.GroupBox1.Controls.Add(Me.tb_search)
+        resources.ApplyResources(Me.GroupBox1, "GroupBox1")
+        Me.GroupBox1.Name = "GroupBox1"
+        Me.GroupBox1.TabStop = False
         '
-        'btn_search_title
+        'rb_section
         '
-        resources.ApplyResources(Me.btn_search_title, "btn_search_title")
-        Me.btn_search_title.Name = "btn_search_title"
-        Me.btn_search_title.UseVisualStyleBackColor = True
+        resources.ApplyResources(Me.rb_section, "rb_section")
+        Me.rb_section.Name = "rb_section"
+        Me.rb_section.UseVisualStyleBackColor = True
         '
-        'btn_search_author
+        'rb_author
         '
-        resources.ApplyResources(Me.btn_search_author, "btn_search_author")
-        Me.btn_search_author.Name = "btn_search_author"
-        Me.btn_search_author.UseVisualStyleBackColor = True
+        resources.ApplyResources(Me.rb_author, "rb_author")
+        Me.rb_author.Name = "rb_author"
+        Me.rb_author.UseVisualStyleBackColor = True
+        '
+        'rb_title
+        '
+        resources.ApplyResources(Me.rb_title, "rb_title")
+        Me.rb_title.Checked = True
+        Me.rb_title.Name = "rb_title"
+        Me.rb_title.TabStop = True
+        Me.rb_title.UseVisualStyleBackColor = True
+        '
+        'btn_search
+        '
+        resources.ApplyResources(Me.btn_search, "btn_search")
+        Me.btn_search.Name = "btn_search"
+        Me.btn_search.UseVisualStyleBackColor = True
         '
         'tb_search
         '
         resources.ApplyResources(Me.tb_search, "tb_search")
         Me.tb_search.Name = "tb_search"
-        '
-        'Label1
-        '
-        resources.ApplyResources(Me.Label1, "Label1")
-        Me.Label1.Name = "Label1"
         '
         'listView_books
         '
@@ -234,7 +246,8 @@ Partial Class Main_form
         Me.TabPage1.ResumeLayout(False)
         Me.TabPage1.PerformLayout()
         Me.TabPage3.ResumeLayout(False)
-        Me.TabPage3.PerformLayout()
+        Me.GroupBox1.ResumeLayout(False)
+        Me.GroupBox1.PerformLayout()
         Me.ResumeLayout(False)
         Me.PerformLayout()
 
@@ -262,9 +275,10 @@ Partial Class Main_form
     Friend WithEvents lv_section As ColumnHeader
     Friend WithEvents lv_units As ColumnHeader
     Friend WithEvents ContextMenuStrip1 As ContextMenuStrip
-    Friend WithEvents btn_search_section As Button
-    Friend WithEvents btn_search_title As Button
-    Friend WithEvents btn_search_author As Button
     Friend WithEvents tb_search As TextBox
-    Friend WithEvents Label1 As Label
+    Friend WithEvents GroupBox1 As GroupBox
+    Friend WithEvents btn_search As Button
+    Friend WithEvents rb_section As RadioButton
+    Friend WithEvents rb_author As RadioButton
+    Friend WithEvents rb_title As RadioButton
 End Class

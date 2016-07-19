@@ -8,6 +8,7 @@
     Dim autocomplete_title As AutoCompleteStringCollection
     Dim autocomplete_author As AutoCompleteStringCollection
     Dim autocomplete_section As AutoCompleteStringCollection
+    Dim search_by As Integer
 
 
     Private Sub AboutToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles AboutToolStripMenuItem.Click
@@ -87,6 +88,10 @@
             LoadDDBB()
 
             lbl_info.Text = "Book " & tb_title.Text & " stored correctly"
+
+            tb_title.Text = String.Empty
+            tb_author.Text = String.Empty
+            tb_section.Text = String.Empty
         Else
             lbl_info.Text = "Please insert at least a title and an author"
         End If
@@ -101,10 +106,17 @@
             Me.Close()
         End Try
 
+        With tb_search
+            .AutoCompleteMode = AutoCompleteMode.SuggestAppend
+            .AutoCompleteSource = AutoCompleteSource.CustomSource
+            .AutoCompleteCustomSource = tb_title.AutoCompleteCustomSource
+        End With
+
         Create_listview_contextMenu()
+        Me.search_by = 0
     End Sub
 
-    Private Sub btn_search_title_Click(sender As Object, e As EventArgs) Handles btn_search_title.Click
+    Private Sub btn_search_title_Click(sender As Object, e As EventArgs)
         ' Call FindItemWithText with the contents of the textbox
         Dim foundItem As ListViewItem = listView_books.FindItemWithText(tb_search.Text)
 
@@ -188,6 +200,65 @@
         listView_books.ListViewItemSorter = New ListViewItemComparer(e.Column, listView_books.Sorting)
         listView_books.EndUpdate()
     End Sub
+
+    Private Sub rb_title_CheckedChanged(sender As Object, e As EventArgs) Handles rb_title.CheckedChanged
+        With tb_search
+            .AutoCompleteMode = AutoCompleteMode.SuggestAppend
+            .AutoCompleteSource = AutoCompleteSource.CustomSource
+            .AutoCompleteCustomSource = tb_title.AutoCompleteCustomSource
+        End With
+        Me.search_by = 0
+    End Sub
+
+    Private Sub rb_author_CheckedChanged(sender As Object, e As EventArgs) Handles rb_author.CheckedChanged
+        With tb_search
+            .AutoCompleteMode = AutoCompleteMode.SuggestAppend
+            .AutoCompleteSource = AutoCompleteSource.CustomSource
+            .AutoCompleteCustomSource = tb_author.AutoCompleteCustomSource
+        End With
+        Me.search_by = 1
+    End Sub
+
+    Private Sub rb_section_CheckedChanged(sender As Object, e As EventArgs) Handles rb_section.CheckedChanged
+        With tb_search
+            .AutoCompleteMode = AutoCompleteMode.SuggestAppend
+            .AutoCompleteSource = AutoCompleteSource.CustomSource
+            .AutoCompleteCustomSource = tb_section.AutoCompleteCustomSource
+        End With
+        Me.search_by = 2
+    End Sub
+
+    Private Sub btn_search_Click(sender As Object, e As EventArgs) Handles btn_search.Click
+        Dim item_text As String
+        Dim search_term As String = Me.UnAccent(tb_search.Text.ToLower())
+
+        listView_books.BeginUpdate()
+
+        LoadDDBB()
+
+        For Each new_item As ListViewItem In listView_books.Items
+            item_text = Me.UnAccent(new_item.SubItems(Me.search_by).Text.ToLower())
+            If Not item_text.Contains(search_term) Then
+                listView_books.Items.Remove(new_item)
+            End If
+        Next
+
+        listView_books.EndUpdate()
+    End Sub
+
+    'https://social.msdn.microsoft.com/Forums/vstudio/en-US/8392f4d3-e016-4337-9d37-fb20fecd1425/converting-string-with-accented-characters-to-nonaccented-equivalent?forum=vbgeneral
+    Public Function UnAccent(ByVal aString As String) As String
+        Dim toReplace() As Char = "àèìòùÀÈÌÒÙ äëïöüÄËÏÖÜ âêîôûÂÊÎÔÛ áéíóúÁÉÍÓÚðÐýÝ ãñõÃÑÕšŠžŽçÇåÅøØ".ToCharArray
+        Dim replaceChars() As Char = "aeiouAEIOU aeiouAEIOU aeiouAEIOU aeiouAEIOUdDyY anoANOsSzZcCaAoO".ToCharArray
+        For index As Integer = 0 To toReplace.GetUpperBound(0)
+            aString = aString.Replace(toReplace(index), replaceChars(index))
+        Next
+        Return aString
+    End Function
+
+    Private Sub tb_search_TextChanged(sender As Object, e As EventArgs) Handles tb_search.TextChanged
+        btn_search.PerformClick()
+    End Sub
 End Class
 
 
@@ -206,12 +277,9 @@ Class ListViewItemComparer
         Me.order = order
     End Sub
 
-    Public Function Compare(x As Object, y As Object) As Integer _
-                        Implements System.Collections.IComparer.Compare
+    Public Function Compare(x As Object, y As Object) As Integer Implements System.Collections.IComparer.Compare
         Dim returnVal As Integer = -1
-        returnVal = [String].Compare(CType(x,
-                        ListViewItem).SubItems(col).Text,
-                        CType(y, ListViewItem).SubItems(col).Text)
+        returnVal = [String].Compare(CType(x, ListViewItem).SubItems(col).Text, CType(y, ListViewItem).SubItems(col).Text)
         ' Determine whether the sort order is descending.
         If order = SortOrder.Descending Then
             ' Invert the value returned by String.Compare.
