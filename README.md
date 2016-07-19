@@ -11,7 +11,7 @@ An open-source tool for a home library management.
 </p>
 
 ## Download
-Download the [executable](latest_build/Athena.exe) and a [empty database](assets/empty_ddbb/Athena.accdb).
+Download the [executable](https://github.com/gomezportillo/Athena/raw/master/latest_build/Athena.exe) and a [empty database](https://github.com/gomezportillo/Athena/raw/master/assets/empty_ddbb/Athena.accdb).
 
 ## Installation
 Athena is portable, so does not need any installation. Place Athena.exe and Athena.accdb on same directory and execute the first one. It has been tested on Windows 7, 8, 10 and some Linux distros.
