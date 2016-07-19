@@ -33,7 +33,6 @@
         Dim item As ListViewItem
         Dim title_list, author_list, section_list As New List(Of String)
 
-
         For Each bAux As Book In _b.dao._books
             item = New ListViewItem(bAux.title)
             item.SubItems.Add(bAux.author)
@@ -75,6 +74,7 @@
             .AutoCompleteCustomSource = autocomplete_section
         End With
     End Sub
+
     Private Sub Btn_add_Click(sender As Object, e As EventArgs) Handles Btn_add.Click
         If tb_title.Text <> String.Empty And tb_author.Text <> String.Empty Then
             If tb_section.Text <> String.Empty Then
