@@ -143,6 +143,23 @@
         End If
     End Sub
 
+    'Creates a .txt file with the current content of the list view
+    Private Sub GeneratetxtToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles GeneratetxtToolStripMenuItem.Click
+        Dim file As System.IO.StreamWriter
+        Dim filename As String = "Athena.txt"
+        Dim content As String = ""
+
+        For Each item As ListViewItem In listView_books.Items
+            content += item.Text + " - " + item.SubItems(1).Text + " - " + item.SubItems(2).Text + " - " + item.SubItems(3).Text + vbCrLf
+        Next
+
+        My.Computer.FileSystem.DeleteFile(filename)
+        file = My.Computer.FileSystem.OpenTextFileWriter(filename, True)
+        file.WriteLine(content)
+        file.Close()
+        lbl_info.Text = "Athena.txt generated correctly"
+    End Sub
+
     'Method for launching the 'Edit' form
     Private Sub menuItemEdit_Listener(sender As Object, e As EventArgs)
         Dim title, author, section, units As String

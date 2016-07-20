@@ -27,6 +27,7 @@ Partial Class Main_form
         Me.MenuStrip1 = New System.Windows.Forms.MenuStrip()
         Me.ContextMenuStrip1 = New System.Windows.Forms.ContextMenuStrip(Me.components)
         Me.FileToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+        Me.GeneratetxtToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.ExitToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.HelpToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.AboutToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
@@ -72,9 +73,14 @@ Partial Class Main_form
         '
         'FileToolStripMenuItem
         '
-        Me.FileToolStripMenuItem.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.ExitToolStripMenuItem})
+        Me.FileToolStripMenuItem.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.GeneratetxtToolStripMenuItem, Me.ExitToolStripMenuItem})
         Me.FileToolStripMenuItem.Name = "FileToolStripMenuItem"
         resources.ApplyResources(Me.FileToolStripMenuItem, "FileToolStripMenuItem")
+        '
+        'GeneratetxtToolStripMenuItem
+        '
+        Me.GeneratetxtToolStripMenuItem.Name = "GeneratetxtToolStripMenuItem"
+        resources.ApplyResources(Me.GeneratetxtToolStripMenuItem, "GeneratetxtToolStripMenuItem")
         '
         'ExitToolStripMenuItem
         '
@@ -280,4 +286,5 @@ Partial Class Main_form
     Friend WithEvents rb_section As RadioButton
     Friend WithEvents rb_author As RadioButton
     Friend WithEvents rb_title As RadioButton
+    Friend WithEvents GeneratetxtToolStripMenuItem As ToolStripMenuItem
 End Class
