@@ -8,6 +8,7 @@
     Dim autocomplete_title As AutoCompleteStringCollection
     Dim autocomplete_author As AutoCompleteStringCollection
     Dim autocomplete_section As AutoCompleteStringCollection
+    Dim autocomplete_collection As AutoCompleteStringCollection
     Dim search_by As Integer
 
 
@@ -20,12 +21,8 @@
     End Sub
 
     Private Sub Main_frame_Load(sender As Object, e As EventArgs) Handles MyBase.Load
-        Try
-            LoadDDBB()
-        Catch ex As Exception
-            MessageBox.Show("No database was found. Please place Athena.accdb on the same directory than this program", "Error")
-            Me.Close()
-        End Try
+
+        LoadDDBB()
 
         tb_search.AutoCompleteCustomSource = tb_title.AutoCompleteCustomSource
 
@@ -35,11 +32,8 @@
 
     Private Sub Btn_add_Click(sender As Object, e As EventArgs) Handles Btn_add.Click
         If tb_title.Text <> String.Empty And tb_author.Text <> String.Empty Then
-            If tb_section.Text <> String.Empty Then
-                _b = New Book(tb_title.Text, tb_author.Text, tb_section.Text)
-            Else
-                _b = New Book(tb_title.Text, tb_author.Text)
-            End If
+
+            _b = New Book(tb_title.Text, tb_author.Text, tb_section.Text, tb_collection.Text)
 
             _b.create()
 
@@ -50,11 +44,13 @@
             tb_title.Text = String.Empty
             tb_author.Text = String.Empty
             tb_section.Text = String.Empty
+            tb_collection.Text = String.Empty
         Else
             lbl_info.Text = "Please insert at least a title and an author"
         End If
     End Sub
 
+    'Launch the context menu where the user has clicked
     Private Sub listView_books_SelectedIndexChanged(sender As Object, e As System.Windows.Forms.MouseEventArgs) Handles listView_books.MouseDown
         If e.Button = MouseButtons.Right Then
             If listView_books.GetItemAt(e.X, e.Y) IsNot Nothing Then
@@ -77,26 +73,32 @@
         End Try
 
         Dim item As ListViewItem
-        Dim title_list, author_list, section_list As New List(Of String)
+        Dim title_list, author_list, section_list, collection_list As New List(Of String)
 
         For Each bAux As Book In _b.dao._books
             item = New ListViewItem(bAux.title)
             item.SubItems.Add(bAux.author)
+
+            bAux.section = If(bAux.section = "None", String.Empty, bAux.section)
             item.SubItems.Add(bAux.section)
+
+            bAux.collection = If(bAux.collection = "None", String.Empty, bAux.collection)
+            item.SubItems.Add(bAux.collection)
             item.SubItems.Add(CStr(bAux.units))
             listView_books.Items.Add(item)
 
             title_list.Add(bAux.title)
             author_list.Add(bAux.author)
             section_list.Add(bAux.section)
+            collection_list.Add(bAux.collection)
         Next
 
-        Fill_TexBox_Autocomplete(title_list, author_list, section_list)
+        Fill_TexBox_Autocomplete(title_list, author_list, section_list, collection_list)
         lbl_info.Text = "List of books updated"
     End Sub
 
     'Subprocedure executed for assigning the data readed from the ddbb to the textbox suggestions 
-    Private Sub Fill_TexBox_Autocomplete(ByVal title_list As List(Of String), ByVal author_list As List(Of String), ByVal section_list As List(Of String))
+    Private Sub Fill_TexBox_Autocomplete(ByVal title_list As List(Of String), ByVal author_list As List(Of String), ByVal section_list As List(Of String), ByVal collection_list As List(Of String))
         autocomplete_title = New AutoCompleteStringCollection()
         autocomplete_title.AddRange(title_list.ToArray())
         tb_title.AutoCompleteCustomSource = autocomplete_title
@@ -108,6 +110,10 @@
         autocomplete_section = New AutoCompleteStringCollection()
         autocomplete_section.AddRange(section_list.ToArray())
         tb_section.AutoCompleteCustomSource = autocomplete_section
+
+        autocomplete_collection = New AutoCompleteStringCollection()
+        autocomplete_collection.AddRange(collection_list.ToArray())
+        tb_collection.AutoCompleteCustomSource = autocomplete_collection
     End Sub
 
     'Subprocess for creating the context menu (edit & delete) for the list view
@@ -150,26 +156,27 @@
         Dim content As String = ""
 
         For Each item As ListViewItem In listView_books.Items
-            content += item.Text + " - " + item.SubItems(1).Text + " - " + item.SubItems(2).Text + " - " + item.SubItems(3).Text + vbCrLf
+            content += item.Text & " - " & item.SubItems(1).Text + " - " & item.SubItems(2).Text + " - " & item.SubItems(3).Text & vbCrLf
         Next
 
         My.Computer.FileSystem.DeleteFile(filename)
         file = My.Computer.FileSystem.OpenTextFileWriter(filename, True)
         file.WriteLine(content)
         file.Close()
-        lbl_info.Text = "Athena.txt generated correctly"
+        lbl_info.Text = filename & " generated correctly"
     End Sub
 
     'Method for launching the 'Edit' form
     Private Sub menuItemEdit_Listener(sender As Object, e As EventArgs)
-        Dim title, author, section, units As String
+        Dim title, author, section, collection, units As String
 
         title = listView_books.SelectedItems(0).SubItems(0).Text
         author = listView_books.SelectedItems(0).SubItems(1).Text
         section = listView_books.SelectedItems(0).SubItems(2).Text
-        units = listView_books.SelectedItems(0).SubItems(3).Text
+        collection = listView_books.SelectedItems(0).SubItems(3).Text
+        units = listView_books.SelectedItems(0).SubItems(4).Text
 
-        _b = New Book(title, author, section, units)
+        _b = New Book(title, author, section, collection, units)
 
         Edit_form.setValues(_b)
         Edit_form.Show()
@@ -210,6 +217,11 @@
         search_by = 2
     End Sub
 
+    Private Sub rb_collection_CheckedChanged(sender As Object, e As EventArgs) Handles rb_collection.CheckedChanged
+        tb_search.AutoCompleteCustomSource = tb_collection.AutoCompleteCustomSource
+        search_by = 3
+    End Sub
+
     'Extracted from https://msdn.microsoft.com/en-us/library/ms996467.aspx
     'Used for alphabetically ordering the list view when the name of the column is clicked
     Private Sub listViewBooks_ColumnClick(sender As Object, e As System.Windows.Forms.ColumnClickEventArgs)
@@ -246,7 +258,6 @@
         Next
         Return aString
     End Function
-
 End Class
 
 

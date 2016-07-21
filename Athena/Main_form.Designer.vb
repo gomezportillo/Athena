@@ -22,10 +22,8 @@ Partial Class Main_form
     'Do not modify it using the code editor.
     <System.Diagnostics.DebuggerStepThrough()>
     Private Sub InitializeComponent()
-        Me.components = New System.ComponentModel.Container()
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(Main_form))
         Me.MenuStrip1 = New System.Windows.Forms.MenuStrip()
-        Me.ContextMenuStrip1 = New System.Windows.Forms.ContextMenuStrip(Me.components)
         Me.FileToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.GeneratetxtToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.ExitToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
@@ -33,6 +31,8 @@ Partial Class Main_form
         Me.AboutToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.TabControl1 = New System.Windows.Forms.TabControl()
         Me.TabPage1 = New System.Windows.Forms.TabPage()
+        Me.tb_collection = New System.Windows.Forms.TextBox()
+        Me.Label1 = New System.Windows.Forms.Label()
         Me.Btn_add = New System.Windows.Forms.Button()
         Me.tb_section = New System.Windows.Forms.TextBox()
         Me.tb_author = New System.Windows.Forms.TextBox()
@@ -42,6 +42,7 @@ Partial Class Main_form
         Me.lbl_author = New System.Windows.Forms.Label()
         Me.TabPage3 = New System.Windows.Forms.TabPage()
         Me.GroupBox1 = New System.Windows.Forms.GroupBox()
+        Me.rb_collection = New System.Windows.Forms.RadioButton()
         Me.rb_section = New System.Windows.Forms.RadioButton()
         Me.rb_author = New System.Windows.Forms.RadioButton()
         Me.rb_title = New System.Windows.Forms.RadioButton()
@@ -50,6 +51,7 @@ Partial Class Main_form
         Me.lv_title = CType(New System.Windows.Forms.ColumnHeader(), System.Windows.Forms.ColumnHeader)
         Me.lv_author = CType(New System.Windows.Forms.ColumnHeader(), System.Windows.Forms.ColumnHeader)
         Me.lv_section = CType(New System.Windows.Forms.ColumnHeader(), System.Windows.Forms.ColumnHeader)
+        Me.lv_collection = CType(New System.Windows.Forms.ColumnHeader(), System.Windows.Forms.ColumnHeader)
         Me.lv_units = CType(New System.Windows.Forms.ColumnHeader(), System.Windows.Forms.ColumnHeader)
         Me.lbl_info = New System.Windows.Forms.Label()
         Me.MenuStrip1.SuspendLayout()
@@ -61,15 +63,9 @@ Partial Class Main_form
         '
         'MenuStrip1
         '
-        Me.MenuStrip1.ContextMenuStrip = Me.ContextMenuStrip1
         Me.MenuStrip1.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.FileToolStripMenuItem, Me.HelpToolStripMenuItem})
         resources.ApplyResources(Me.MenuStrip1, "MenuStrip1")
         Me.MenuStrip1.Name = "MenuStrip1"
-        '
-        'ContextMenuStrip1
-        '
-        Me.ContextMenuStrip1.Name = "ContextMenuStrip1"
-        resources.ApplyResources(Me.ContextMenuStrip1, "ContextMenuStrip1")
         '
         'FileToolStripMenuItem
         '
@@ -108,6 +104,8 @@ Partial Class Main_form
         '
         'TabPage1
         '
+        Me.TabPage1.Controls.Add(Me.tb_collection)
+        Me.TabPage1.Controls.Add(Me.Label1)
         Me.TabPage1.Controls.Add(Me.Btn_add)
         Me.TabPage1.Controls.Add(Me.tb_section)
         Me.TabPage1.Controls.Add(Me.tb_author)
@@ -118,6 +116,18 @@ Partial Class Main_form
         resources.ApplyResources(Me.TabPage1, "TabPage1")
         Me.TabPage1.Name = "TabPage1"
         Me.TabPage1.UseVisualStyleBackColor = True
+        '
+        'tb_collection
+        '
+        Me.tb_collection.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.SuggestAppend
+        Me.tb_collection.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.CustomSource
+        resources.ApplyResources(Me.tb_collection, "tb_collection")
+        Me.tb_collection.Name = "tb_collection"
+        '
+        'Label1
+        '
+        resources.ApplyResources(Me.Label1, "Label1")
+        Me.Label1.Name = "Label1"
         '
         'Btn_add
         '
@@ -171,6 +181,7 @@ Partial Class Main_form
         '
         'GroupBox1
         '
+        Me.GroupBox1.Controls.Add(Me.rb_collection)
         Me.GroupBox1.Controls.Add(Me.rb_section)
         Me.GroupBox1.Controls.Add(Me.rb_author)
         Me.GroupBox1.Controls.Add(Me.rb_title)
@@ -178,6 +189,12 @@ Partial Class Main_form
         resources.ApplyResources(Me.GroupBox1, "GroupBox1")
         Me.GroupBox1.Name = "GroupBox1"
         Me.GroupBox1.TabStop = False
+        '
+        'rb_collection
+        '
+        resources.ApplyResources(Me.rb_collection, "rb_collection")
+        Me.rb_collection.Name = "rb_collection"
+        Me.rb_collection.UseVisualStyleBackColor = True
         '
         'rb_section
         '
@@ -201,14 +218,14 @@ Partial Class Main_form
         '
         'tb_search
         '
-        Me.tb_search.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.SuggestAppend
+        Me.tb_search.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.Suggest
         Me.tb_search.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.CustomSource
         resources.ApplyResources(Me.tb_search, "tb_search")
         Me.tb_search.Name = "tb_search"
         '
         'listView_books
         '
-        Me.listView_books.Columns.AddRange(New System.Windows.Forms.ColumnHeader() {Me.lv_title, Me.lv_author, Me.lv_section, Me.lv_units})
+        Me.listView_books.Columns.AddRange(New System.Windows.Forms.ColumnHeader() {Me.lv_title, Me.lv_author, Me.lv_section, Me.lv_collection, Me.lv_units})
         Me.listView_books.FullRowSelect = True
         Me.listView_books.GridLines = True
         resources.ApplyResources(Me.listView_books, "listView_books")
@@ -227,6 +244,10 @@ Partial Class Main_form
         'lv_section
         '
         resources.ApplyResources(Me.lv_section, "lv_section")
+        '
+        'lv_collection
+        '
+        resources.ApplyResources(Me.lv_collection, "lv_collection")
         '
         'lv_units
         '
@@ -280,11 +301,14 @@ Partial Class Main_form
     Friend WithEvents lv_author As ColumnHeader
     Friend WithEvents lv_section As ColumnHeader
     Friend WithEvents lv_units As ColumnHeader
-    Friend WithEvents ContextMenuStrip1 As ContextMenuStrip
     Friend WithEvents tb_search As TextBox
     Friend WithEvents GroupBox1 As GroupBox
     Friend WithEvents rb_section As RadioButton
     Friend WithEvents rb_author As RadioButton
     Friend WithEvents rb_title As RadioButton
     Friend WithEvents GeneratetxtToolStripMenuItem As ToolStripMenuItem
+    Friend WithEvents tb_collection As TextBox
+    Friend WithEvents Label1 As Label
+    Friend WithEvents rb_collection As RadioButton
+    Friend WithEvents lv_collection As ColumnHeader
 End Class

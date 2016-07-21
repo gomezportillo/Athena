@@ -120,31 +120,7 @@
   <metadata name="MenuStrip1.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
     <value>17, 17</value>
   </metadata>
-  <metadata name="ContextMenuStrip1.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
-    <value>132, 17</value>
-  </metadata>
   <assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
-  <data name="ContextMenuStrip1.Size" type="System.Drawing.Size, System.Drawing">
-    <value>61, 4</value>
-  </data>
-  <data name="&gt;&gt;ContextMenuStrip1.Name" xml:space="preserve">
-    <value>ContextMenuStrip1</value>
-  </data>
-  <data name="&gt;&gt;ContextMenuStrip1.Type" xml:space="preserve">
-    <value>System.Windows.Forms.ContextMenuStrip, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="FileToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
-    <value>37, 20</value>
-  </data>
-  <data name="FileToolStripMenuItem.Text" xml:space="preserve">
-    <value>&amp;File</value>
-  </data>
-  <data name="HelpToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
-    <value>44, 20</value>
-  </data>
-  <data name="HelpToolStripMenuItem.Text" xml:space="preserve">
-    <value>&amp;Help</value>
-  </data>
   <data name="MenuStrip1.Location" type="System.Drawing.Point, System.Drawing">
     <value>0, 0</value>
   </data>
@@ -168,25 +144,106 @@
     <value>$this</value>
   </data>
   <data name="&gt;&gt;MenuStrip1.ZOrder" xml:space="preserve">
-    <value>2</value>
+    <value>1</value>
+  </data>
+  <data name="FileToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
+    <value>37, 20</value>
+  </data>
+  <data name="FileToolStripMenuItem.Text" xml:space="preserve">
+    <value>&amp;File</value>
   </data>
   <data name="GeneratetxtToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
-    <value>152, 22</value>
+    <value>140, 22</value>
   </data>
   <data name="GeneratetxtToolStripMenuItem.Text" xml:space="preserve">
-    <value>Generate .txt</value>
+    <value>&amp;Generate .txt</value>
   </data>
   <data name="ExitToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
-    <value>152, 22</value>
+    <value>140, 22</value>
   </data>
   <data name="ExitToolStripMenuItem.Text" xml:space="preserve">
     <value>&amp;Exit</value>
+  </data>
+  <data name="HelpToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
+    <value>44, 20</value>
+  </data>
+  <data name="HelpToolStripMenuItem.Text" xml:space="preserve">
+    <value>&amp;Help</value>
   </data>
   <data name="AboutToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
     <value>107, 22</value>
   </data>
   <data name="AboutToolStripMenuItem.Text" xml:space="preserve">
     <value>A&amp;bout</value>
+  </data>
+  <data name="&gt;&gt;TabPage1.Name" xml:space="preserve">
+    <value>TabPage1</value>
+  </data>
+  <data name="&gt;&gt;TabPage1.Type" xml:space="preserve">
+    <value>System.Windows.Forms.TabPage, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;TabPage1.Parent" xml:space="preserve">
+    <value>TabControl1</value>
+  </data>
+  <data name="&gt;&gt;TabPage1.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <data name="&gt;&gt;TabPage3.Name" xml:space="preserve">
+    <value>TabPage3</value>
+  </data>
+  <data name="&gt;&gt;TabPage3.Type" xml:space="preserve">
+    <value>System.Windows.Forms.TabPage, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;TabPage3.Parent" xml:space="preserve">
+    <value>TabControl1</value>
+  </data>
+  <data name="&gt;&gt;TabPage3.ZOrder" xml:space="preserve">
+    <value>1</value>
+  </data>
+  <data name="TabControl1.Location" type="System.Drawing.Point, System.Drawing">
+    <value>12, 27</value>
+  </data>
+  <data name="TabControl1.Size" type="System.Drawing.Size, System.Drawing">
+    <value>1250, 587</value>
+  </data>
+  <data name="TabControl1.TabIndex" type="System.Int32, mscorlib">
+    <value>0</value>
+  </data>
+  <data name="&gt;&gt;TabControl1.Name" xml:space="preserve">
+    <value>TabControl1</value>
+  </data>
+  <data name="&gt;&gt;TabControl1.Type" xml:space="preserve">
+    <value>System.Windows.Forms.TabControl, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;TabControl1.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;TabControl1.ZOrder" xml:space="preserve">
+    <value>2</value>
+  </data>
+  <data name="&gt;&gt;tb_collection.Name" xml:space="preserve">
+    <value>tb_collection</value>
+  </data>
+  <data name="&gt;&gt;tb_collection.Type" xml:space="preserve">
+    <value>System.Windows.Forms.TextBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;tb_collection.Parent" xml:space="preserve">
+    <value>TabPage1</value>
+  </data>
+  <data name="&gt;&gt;tb_collection.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <data name="&gt;&gt;Label1.Name" xml:space="preserve">
+    <value>Label1</value>
+  </data>
+  <data name="&gt;&gt;Label1.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;Label1.Parent" xml:space="preserve">
+    <value>TabPage1</value>
+  </data>
+  <data name="&gt;&gt;Label1.ZOrder" xml:space="preserve">
+    <value>1</value>
   </data>
   <data name="&gt;&gt;Btn_add.Name" xml:space="preserve">
     <value>Btn_add</value>
@@ -198,7 +255,7 @@
     <value>TabPage1</value>
   </data>
   <data name="&gt;&gt;Btn_add.ZOrder" xml:space="preserve">
-    <value>0</value>
+    <value>2</value>
   </data>
   <data name="&gt;&gt;tb_section.Name" xml:space="preserve">
     <value>tb_section</value>
@@ -210,7 +267,7 @@
     <value>TabPage1</value>
   </data>
   <data name="&gt;&gt;tb_section.ZOrder" xml:space="preserve">
-    <value>1</value>
+    <value>3</value>
   </data>
   <data name="&gt;&gt;tb_author.Name" xml:space="preserve">
     <value>tb_author</value>
@@ -222,7 +279,7 @@
     <value>TabPage1</value>
   </data>
   <data name="&gt;&gt;tb_author.ZOrder" xml:space="preserve">
-    <value>2</value>
+    <value>4</value>
   </data>
   <data name="&gt;&gt;tb_title.Name" xml:space="preserve">
     <value>tb_title</value>
@@ -234,7 +291,7 @@
     <value>TabPage1</value>
   </data>
   <data name="&gt;&gt;tb_title.ZOrder" xml:space="preserve">
-    <value>3</value>
+    <value>5</value>
   </data>
   <data name="&gt;&gt;lbl_section.Name" xml:space="preserve">
     <value>lbl_section</value>
@@ -246,7 +303,7 @@
     <value>TabPage1</value>
   </data>
   <data name="&gt;&gt;lbl_section.ZOrder" xml:space="preserve">
-    <value>4</value>
+    <value>6</value>
   </data>
   <data name="&gt;&gt;lbl_title.Name" xml:space="preserve">
     <value>lbl_title</value>
@@ -258,7 +315,7 @@
     <value>TabPage1</value>
   </data>
   <data name="&gt;&gt;lbl_title.ZOrder" xml:space="preserve">
-    <value>5</value>
+    <value>7</value>
   </data>
   <data name="&gt;&gt;lbl_author.Name" xml:space="preserve">
     <value>lbl_author</value>
@@ -270,7 +327,7 @@
     <value>TabPage1</value>
   </data>
   <data name="&gt;&gt;lbl_author.ZOrder" xml:space="preserve">
-    <value>6</value>
+    <value>8</value>
   </data>
   <data name="TabPage1.Location" type="System.Drawing.Point, System.Drawing">
     <value>4, 22</value>
@@ -299,6 +356,237 @@
   </data>
   <data name="&gt;&gt;TabPage1.ZOrder" xml:space="preserve">
     <value>0</value>
+  </data>
+  <data name="tb_collection.Location" type="System.Drawing.Point, System.Drawing">
+    <value>107, 258</value>
+  </data>
+  <data name="tb_collection.Size" type="System.Drawing.Size, System.Drawing">
+    <value>1021, 20</value>
+  </data>
+  <data name="tb_collection.TabIndex" type="System.Int32, mscorlib">
+    <value>4</value>
+  </data>
+  <data name="&gt;&gt;tb_collection.Name" xml:space="preserve">
+    <value>tb_collection</value>
+  </data>
+  <data name="&gt;&gt;tb_collection.Type" xml:space="preserve">
+    <value>System.Windows.Forms.TextBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;tb_collection.Parent" xml:space="preserve">
+    <value>TabPage1</value>
+  </data>
+  <data name="&gt;&gt;tb_collection.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <data name="Label1.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="Label1.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="Label1.Location" type="System.Drawing.Point, System.Drawing">
+    <value>48, 261</value>
+  </data>
+  <data name="Label1.Size" type="System.Drawing.Size, System.Drawing">
+    <value>53, 13</value>
+  </data>
+  <data name="Label1.TabIndex" type="System.Int32, mscorlib">
+    <value>7</value>
+  </data>
+  <data name="Label1.Text" xml:space="preserve">
+    <value>Collection</value>
+  </data>
+  <data name="&gt;&gt;Label1.Name" xml:space="preserve">
+    <value>Label1</value>
+  </data>
+  <data name="&gt;&gt;Label1.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;Label1.Parent" xml:space="preserve">
+    <value>TabPage1</value>
+  </data>
+  <data name="&gt;&gt;Label1.ZOrder" xml:space="preserve">
+    <value>1</value>
+  </data>
+  <data name="Btn_add.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="Btn_add.Location" type="System.Drawing.Point, System.Drawing">
+    <value>457, 342</value>
+  </data>
+  <data name="Btn_add.Size" type="System.Drawing.Size, System.Drawing">
+    <value>287, 60</value>
+  </data>
+  <data name="Btn_add.TabIndex" type="System.Int32, mscorlib">
+    <value>7</value>
+  </data>
+  <data name="Btn_add.Text" xml:space="preserve">
+    <value>Add book</value>
+  </data>
+  <data name="&gt;&gt;Btn_add.Name" xml:space="preserve">
+    <value>Btn_add</value>
+  </data>
+  <data name="&gt;&gt;Btn_add.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;Btn_add.Parent" xml:space="preserve">
+    <value>TabPage1</value>
+  </data>
+  <data name="&gt;&gt;Btn_add.ZOrder" xml:space="preserve">
+    <value>2</value>
+  </data>
+  <data name="tb_section.Location" type="System.Drawing.Point, System.Drawing">
+    <value>107, 213</value>
+  </data>
+  <data name="tb_section.Size" type="System.Drawing.Size, System.Drawing">
+    <value>1021, 20</value>
+  </data>
+  <data name="tb_section.TabIndex" type="System.Int32, mscorlib">
+    <value>3</value>
+  </data>
+  <data name="&gt;&gt;tb_section.Name" xml:space="preserve">
+    <value>tb_section</value>
+  </data>
+  <data name="&gt;&gt;tb_section.Type" xml:space="preserve">
+    <value>System.Windows.Forms.TextBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;tb_section.Parent" xml:space="preserve">
+    <value>TabPage1</value>
+  </data>
+  <data name="&gt;&gt;tb_section.ZOrder" xml:space="preserve">
+    <value>3</value>
+  </data>
+  <data name="tb_author.Location" type="System.Drawing.Point, System.Drawing">
+    <value>107, 169</value>
+  </data>
+  <data name="tb_author.Size" type="System.Drawing.Size, System.Drawing">
+    <value>1021, 20</value>
+  </data>
+  <data name="tb_author.TabIndex" type="System.Int32, mscorlib">
+    <value>2</value>
+  </data>
+  <data name="&gt;&gt;tb_author.Name" xml:space="preserve">
+    <value>tb_author</value>
+  </data>
+  <data name="&gt;&gt;tb_author.Type" xml:space="preserve">
+    <value>System.Windows.Forms.TextBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;tb_author.Parent" xml:space="preserve">
+    <value>TabPage1</value>
+  </data>
+  <data name="&gt;&gt;tb_author.ZOrder" xml:space="preserve">
+    <value>4</value>
+  </data>
+  <data name="tb_title.Location" type="System.Drawing.Point, System.Drawing">
+    <value>107, 126</value>
+  </data>
+  <data name="tb_title.Size" type="System.Drawing.Size, System.Drawing">
+    <value>1021, 20</value>
+  </data>
+  <data name="tb_title.TabIndex" type="System.Int32, mscorlib">
+    <value>1</value>
+  </data>
+  <data name="&gt;&gt;tb_title.Name" xml:space="preserve">
+    <value>tb_title</value>
+  </data>
+  <data name="&gt;&gt;tb_title.Type" xml:space="preserve">
+    <value>System.Windows.Forms.TextBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;tb_title.Parent" xml:space="preserve">
+    <value>TabPage1</value>
+  </data>
+  <data name="&gt;&gt;tb_title.ZOrder" xml:space="preserve">
+    <value>5</value>
+  </data>
+  <data name="lbl_section.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="lbl_section.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="lbl_section.Location" type="System.Drawing.Point, System.Drawing">
+    <value>58, 216</value>
+  </data>
+  <data name="lbl_section.Size" type="System.Drawing.Size, System.Drawing">
+    <value>43, 13</value>
+  </data>
+  <data name="lbl_section.TabIndex" type="System.Int32, mscorlib">
+    <value>2</value>
+  </data>
+  <data name="lbl_section.Text" xml:space="preserve">
+    <value>Section</value>
+  </data>
+  <data name="&gt;&gt;lbl_section.Name" xml:space="preserve">
+    <value>lbl_section</value>
+  </data>
+  <data name="&gt;&gt;lbl_section.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;lbl_section.Parent" xml:space="preserve">
+    <value>TabPage1</value>
+  </data>
+  <data name="&gt;&gt;lbl_section.ZOrder" xml:space="preserve">
+    <value>6</value>
+  </data>
+  <data name="lbl_title.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="lbl_title.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="lbl_title.Location" type="System.Drawing.Point, System.Drawing">
+    <value>74, 129</value>
+  </data>
+  <data name="lbl_title.Size" type="System.Drawing.Size, System.Drawing">
+    <value>27, 13</value>
+  </data>
+  <data name="lbl_title.TabIndex" type="System.Int32, mscorlib">
+    <value>1</value>
+  </data>
+  <data name="lbl_title.Text" xml:space="preserve">
+    <value>Title</value>
+  </data>
+  <data name="&gt;&gt;lbl_title.Name" xml:space="preserve">
+    <value>lbl_title</value>
+  </data>
+  <data name="&gt;&gt;lbl_title.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;lbl_title.Parent" xml:space="preserve">
+    <value>TabPage1</value>
+  </data>
+  <data name="&gt;&gt;lbl_title.ZOrder" xml:space="preserve">
+    <value>7</value>
+  </data>
+  <data name="lbl_author.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="lbl_author.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="lbl_author.Location" type="System.Drawing.Point, System.Drawing">
+    <value>63, 172</value>
+  </data>
+  <data name="lbl_author.Size" type="System.Drawing.Size, System.Drawing">
+    <value>38, 13</value>
+  </data>
+  <data name="lbl_author.TabIndex" type="System.Int32, mscorlib">
+    <value>0</value>
+  </data>
+  <data name="lbl_author.Text" xml:space="preserve">
+    <value>Author</value>
+  </data>
+  <data name="&gt;&gt;lbl_author.Name" xml:space="preserve">
+    <value>lbl_author</value>
+  </data>
+  <data name="&gt;&gt;lbl_author.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;lbl_author.Parent" xml:space="preserve">
+    <value>TabPage1</value>
+  </data>
+  <data name="&gt;&gt;lbl_author.ZOrder" xml:space="preserve">
+    <value>8</value>
   </data>
   <data name="&gt;&gt;GroupBox1.Name" xml:space="preserve">
     <value>GroupBox1</value>
@@ -351,206 +639,17 @@
   <data name="&gt;&gt;TabPage3.ZOrder" xml:space="preserve">
     <value>1</value>
   </data>
-  <data name="TabControl1.Location" type="System.Drawing.Point, System.Drawing">
-    <value>12, 27</value>
+  <data name="&gt;&gt;rb_collection.Name" xml:space="preserve">
+    <value>rb_collection</value>
   </data>
-  <data name="TabControl1.Size" type="System.Drawing.Size, System.Drawing">
-    <value>1250, 587</value>
+  <data name="&gt;&gt;rb_collection.Type" xml:space="preserve">
+    <value>System.Windows.Forms.RadioButton, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="TabControl1.TabIndex" type="System.Int32, mscorlib">
-    <value>1</value>
+  <data name="&gt;&gt;rb_collection.Parent" xml:space="preserve">
+    <value>GroupBox1</value>
   </data>
-  <data name="&gt;&gt;TabControl1.Name" xml:space="preserve">
-    <value>TabControl1</value>
-  </data>
-  <data name="&gt;&gt;TabControl1.Type" xml:space="preserve">
-    <value>System.Windows.Forms.TabControl, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;TabControl1.Parent" xml:space="preserve">
-    <value>$this</value>
-  </data>
-  <data name="&gt;&gt;TabControl1.ZOrder" xml:space="preserve">
-    <value>3</value>
-  </data>
-  <data name="Btn_add.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
-    <value>NoControl</value>
-  </data>
-  <data name="Btn_add.Location" type="System.Drawing.Point, System.Drawing">
-    <value>454, 312</value>
-  </data>
-  <data name="Btn_add.Size" type="System.Drawing.Size, System.Drawing">
-    <value>287, 60</value>
-  </data>
-  <data name="Btn_add.TabIndex" type="System.Int32, mscorlib">
-    <value>6</value>
-  </data>
-  <data name="Btn_add.Text" xml:space="preserve">
-    <value>Add book</value>
-  </data>
-  <data name="&gt;&gt;Btn_add.Name" xml:space="preserve">
-    <value>Btn_add</value>
-  </data>
-  <data name="&gt;&gt;Btn_add.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;Btn_add.Parent" xml:space="preserve">
-    <value>TabPage1</value>
-  </data>
-  <data name="&gt;&gt;Btn_add.ZOrder" xml:space="preserve">
+  <data name="&gt;&gt;rb_collection.ZOrder" xml:space="preserve">
     <value>0</value>
-  </data>
-  <data name="tb_section.Location" type="System.Drawing.Point, System.Drawing">
-    <value>107, 209</value>
-  </data>
-  <data name="tb_section.Size" type="System.Drawing.Size, System.Drawing">
-    <value>1021, 20</value>
-  </data>
-  <data name="tb_section.TabIndex" type="System.Int32, mscorlib">
-    <value>5</value>
-  </data>
-  <data name="&gt;&gt;tb_section.Name" xml:space="preserve">
-    <value>tb_section</value>
-  </data>
-  <data name="&gt;&gt;tb_section.Type" xml:space="preserve">
-    <value>System.Windows.Forms.TextBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;tb_section.Parent" xml:space="preserve">
-    <value>TabPage1</value>
-  </data>
-  <data name="&gt;&gt;tb_section.ZOrder" xml:space="preserve">
-    <value>1</value>
-  </data>
-  <data name="tb_author.Location" type="System.Drawing.Point, System.Drawing">
-    <value>107, 169</value>
-  </data>
-  <data name="tb_author.Size" type="System.Drawing.Size, System.Drawing">
-    <value>1021, 20</value>
-  </data>
-  <data name="tb_author.TabIndex" type="System.Int32, mscorlib">
-    <value>4</value>
-  </data>
-  <data name="&gt;&gt;tb_author.Name" xml:space="preserve">
-    <value>tb_author</value>
-  </data>
-  <data name="&gt;&gt;tb_author.Type" xml:space="preserve">
-    <value>System.Windows.Forms.TextBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;tb_author.Parent" xml:space="preserve">
-    <value>TabPage1</value>
-  </data>
-  <data name="&gt;&gt;tb_author.ZOrder" xml:space="preserve">
-    <value>2</value>
-  </data>
-  <data name="tb_title.Location" type="System.Drawing.Point, System.Drawing">
-    <value>107, 126</value>
-  </data>
-  <data name="tb_title.Size" type="System.Drawing.Size, System.Drawing">
-    <value>1021, 20</value>
-  </data>
-  <data name="tb_title.TabIndex" type="System.Int32, mscorlib">
-    <value>3</value>
-  </data>
-  <data name="&gt;&gt;tb_title.Name" xml:space="preserve">
-    <value>tb_title</value>
-  </data>
-  <data name="&gt;&gt;tb_title.Type" xml:space="preserve">
-    <value>System.Windows.Forms.TextBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;tb_title.Parent" xml:space="preserve">
-    <value>TabPage1</value>
-  </data>
-  <data name="&gt;&gt;tb_title.ZOrder" xml:space="preserve">
-    <value>3</value>
-  </data>
-  <data name="lbl_section.AutoSize" type="System.Boolean, mscorlib">
-    <value>True</value>
-  </data>
-  <data name="lbl_section.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
-    <value>NoControl</value>
-  </data>
-  <data name="lbl_section.Location" type="System.Drawing.Point, System.Drawing">
-    <value>58, 212</value>
-  </data>
-  <data name="lbl_section.Size" type="System.Drawing.Size, System.Drawing">
-    <value>43, 13</value>
-  </data>
-  <data name="lbl_section.TabIndex" type="System.Int32, mscorlib">
-    <value>2</value>
-  </data>
-  <data name="lbl_section.Text" xml:space="preserve">
-    <value>Section</value>
-  </data>
-  <data name="&gt;&gt;lbl_section.Name" xml:space="preserve">
-    <value>lbl_section</value>
-  </data>
-  <data name="&gt;&gt;lbl_section.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;lbl_section.Parent" xml:space="preserve">
-    <value>TabPage1</value>
-  </data>
-  <data name="&gt;&gt;lbl_section.ZOrder" xml:space="preserve">
-    <value>4</value>
-  </data>
-  <data name="lbl_title.AutoSize" type="System.Boolean, mscorlib">
-    <value>True</value>
-  </data>
-  <data name="lbl_title.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
-    <value>NoControl</value>
-  </data>
-  <data name="lbl_title.Location" type="System.Drawing.Point, System.Drawing">
-    <value>74, 129</value>
-  </data>
-  <data name="lbl_title.Size" type="System.Drawing.Size, System.Drawing">
-    <value>27, 13</value>
-  </data>
-  <data name="lbl_title.TabIndex" type="System.Int32, mscorlib">
-    <value>1</value>
-  </data>
-  <data name="lbl_title.Text" xml:space="preserve">
-    <value>Title</value>
-  </data>
-  <data name="&gt;&gt;lbl_title.Name" xml:space="preserve">
-    <value>lbl_title</value>
-  </data>
-  <data name="&gt;&gt;lbl_title.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;lbl_title.Parent" xml:space="preserve">
-    <value>TabPage1</value>
-  </data>
-  <data name="&gt;&gt;lbl_title.ZOrder" xml:space="preserve">
-    <value>5</value>
-  </data>
-  <data name="lbl_author.AutoSize" type="System.Boolean, mscorlib">
-    <value>True</value>
-  </data>
-  <data name="lbl_author.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
-    <value>NoControl</value>
-  </data>
-  <data name="lbl_author.Location" type="System.Drawing.Point, System.Drawing">
-    <value>63, 172</value>
-  </data>
-  <data name="lbl_author.Size" type="System.Drawing.Size, System.Drawing">
-    <value>38, 13</value>
-  </data>
-  <data name="lbl_author.TabIndex" type="System.Int32, mscorlib">
-    <value>0</value>
-  </data>
-  <data name="lbl_author.Text" xml:space="preserve">
-    <value>Author</value>
-  </data>
-  <data name="&gt;&gt;lbl_author.Name" xml:space="preserve">
-    <value>lbl_author</value>
-  </data>
-  <data name="&gt;&gt;lbl_author.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;lbl_author.Parent" xml:space="preserve">
-    <value>TabPage1</value>
-  </data>
-  <data name="&gt;&gt;lbl_author.ZOrder" xml:space="preserve">
-    <value>6</value>
   </data>
   <data name="&gt;&gt;rb_section.Name" xml:space="preserve">
     <value>rb_section</value>
@@ -562,7 +661,7 @@
     <value>GroupBox1</value>
   </data>
   <data name="&gt;&gt;rb_section.ZOrder" xml:space="preserve">
-    <value>0</value>
+    <value>1</value>
   </data>
   <data name="&gt;&gt;rb_author.Name" xml:space="preserve">
     <value>rb_author</value>
@@ -574,7 +673,7 @@
     <value>GroupBox1</value>
   </data>
   <data name="&gt;&gt;rb_author.ZOrder" xml:space="preserve">
-    <value>1</value>
+    <value>2</value>
   </data>
   <data name="&gt;&gt;rb_title.Name" xml:space="preserve">
     <value>rb_title</value>
@@ -586,7 +685,7 @@
     <value>GroupBox1</value>
   </data>
   <data name="&gt;&gt;rb_title.ZOrder" xml:space="preserve">
-    <value>2</value>
+    <value>3</value>
   </data>
   <data name="&gt;&gt;tb_search.Name" xml:space="preserve">
     <value>tb_search</value>
@@ -598,7 +697,7 @@
     <value>GroupBox1</value>
   </data>
   <data name="&gt;&gt;tb_search.ZOrder" xml:space="preserve">
-    <value>3</value>
+    <value>4</value>
   </data>
   <data name="GroupBox1.Location" type="System.Drawing.Point, System.Drawing">
     <value>6, 6</value>
@@ -622,6 +721,36 @@
     <value>TabPage3</value>
   </data>
   <data name="&gt;&gt;GroupBox1.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <data name="rb_collection.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="rb_collection.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="rb_collection.Location" type="System.Drawing.Point, System.Drawing">
+    <value>333, 16</value>
+  </data>
+  <data name="rb_collection.Size" type="System.Drawing.Size, System.Drawing">
+    <value>121, 17</value>
+  </data>
+  <data name="rb_collection.TabIndex" type="System.Int32, mscorlib">
+    <value>7</value>
+  </data>
+  <data name="rb_collection.Text" xml:space="preserve">
+    <value>Search by collection</value>
+  </data>
+  <data name="&gt;&gt;rb_collection.Name" xml:space="preserve">
+    <value>rb_collection</value>
+  </data>
+  <data name="&gt;&gt;rb_collection.Type" xml:space="preserve">
+    <value>System.Windows.Forms.RadioButton, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;rb_collection.Parent" xml:space="preserve">
+    <value>GroupBox1</value>
+  </data>
+  <data name="&gt;&gt;rb_collection.ZOrder" xml:space="preserve">
     <value>0</value>
   </data>
   <data name="rb_section.AutoSize" type="System.Boolean, mscorlib">
@@ -652,7 +781,7 @@
     <value>GroupBox1</value>
   </data>
   <data name="&gt;&gt;rb_section.ZOrder" xml:space="preserve">
-    <value>0</value>
+    <value>1</value>
   </data>
   <data name="rb_author.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
@@ -682,7 +811,7 @@
     <value>GroupBox1</value>
   </data>
   <data name="&gt;&gt;rb_author.ZOrder" xml:space="preserve">
-    <value>1</value>
+    <value>2</value>
   </data>
   <data name="rb_title.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
@@ -709,13 +838,13 @@
     <value>GroupBox1</value>
   </data>
   <data name="&gt;&gt;rb_title.ZOrder" xml:space="preserve">
-    <value>2</value>
+    <value>3</value>
   </data>
   <data name="tb_search.Location" type="System.Drawing.Point, System.Drawing">
-    <value>393, 13</value>
+    <value>499, 13</value>
   </data>
   <data name="tb_search.Size" type="System.Drawing.Size, System.Drawing">
-    <value>822, 20</value>
+    <value>716, 20</value>
   </data>
   <data name="tb_search.TabIndex" type="System.Int32, mscorlib">
     <value>2</value>
@@ -730,7 +859,7 @@
     <value>GroupBox1</value>
   </data>
   <data name="&gt;&gt;tb_search.ZOrder" xml:space="preserve">
-    <value>3</value>
+    <value>4</value>
   </data>
   <data name="listView_books.Location" type="System.Drawing.Point, System.Drawing">
     <value>0, 50</value>
@@ -757,25 +886,31 @@
     <value>Title</value>
   </data>
   <data name="lv_title.Width" type="System.Int32, mscorlib">
-    <value>404</value>
+    <value>345</value>
   </data>
   <data name="lv_author.Text" xml:space="preserve">
     <value>Author</value>
   </data>
   <data name="lv_author.Width" type="System.Int32, mscorlib">
-    <value>439</value>
+    <value>317</value>
   </data>
   <data name="lv_section.Text" xml:space="preserve">
     <value>Section</value>
   </data>
   <data name="lv_section.Width" type="System.Int32, mscorlib">
-    <value>278</value>
+    <value>300</value>
+  </data>
+  <data name="lv_collection.Text" xml:space="preserve">
+    <value>Collection</value>
+  </data>
+  <data name="lv_collection.Width" type="System.Int32, mscorlib">
+    <value>218</value>
   </data>
   <data name="lv_units.Text" xml:space="preserve">
     <value>Units</value>
   </data>
   <data name="lv_units.Width" type="System.Int32, mscorlib">
-    <value>113</value>
+    <value>56</value>
   </data>
   <data name="lbl_info.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
@@ -802,7 +937,7 @@
     <value>$this</value>
   </data>
   <data name="&gt;&gt;lbl_info.ZOrder" xml:space="preserve">
-    <value>1</value>
+    <value>0</value>
   </data>
   <metadata name="$this.Localizable" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
     <value>True</value>
@@ -7034,6 +7169,12 @@
     <value>lv_section</value>
   </data>
   <data name="&gt;&gt;lv_section.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ColumnHeader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;lv_collection.Name" xml:space="preserve">
+    <value>lv_collection</value>
+  </data>
+  <data name="&gt;&gt;lv_collection.Type" xml:space="preserve">
     <value>System.Windows.Forms.ColumnHeader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;lv_units.Name" xml:space="preserve">
