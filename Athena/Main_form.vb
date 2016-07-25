@@ -159,7 +159,10 @@
             content += item.Text & " - " & item.SubItems(1).Text + " - " & item.SubItems(2).Text + " - " & item.SubItems(3).Text & vbCrLf
         Next
 
-        My.Computer.FileSystem.DeleteFile(filename)
+        If My.Computer.FileSystem.FileExists(filename) Then
+            My.Computer.FileSystem.DeleteFile(filename)
+        End If
+
         file = My.Computer.FileSystem.OpenTextFileWriter(filename, True)
         file.WriteLine(content)
         file.Close()
