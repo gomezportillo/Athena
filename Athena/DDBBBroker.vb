@@ -1,6 +1,4 @@
-﻿Imports Microsoft.VisualBasic
-
-Public Class DDBBBroker
+﻿Public Class DDBBBroker
     Private _connection_driver As String = "Provider=Microsoft.ACE.OLEDB.12.0;"
     Private _data_source As String = "Data Source=Athena.accdb"
     Private Shared _connection As OleDb.OleDbConnection

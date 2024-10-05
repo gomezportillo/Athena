@@ -9,11 +9,12 @@
         Dim comm As String = "SELECT * FROM Books WHERE Title='" & b.title & "' AND Author='" & b.author & "';"
         Dim reader As OleDb.OleDbDataReader = DDBBBroker.getInstance.read(comm)
         reader.Read()
-        b.title = reader.GetValue(0)
-        b.author = reader.GetValue(1)
-        b.section = reader.GetValue(2)
-        b.collection = reader.GetValue(3)
-        b.units = CInt(reader.GetValue(4))
+
+        b.title = reader.GetValue(reader.GetOrdinal("Title"))
+        b.author = reader.GetValue(reader.GetOrdinal("Author"))
+        b.section = reader.GetValue(reader.GetOrdinal("Section"))
+        b.collection = reader.GetValue(reader.GetOrdinal("Collection"))
+        b.units = reader.GetValue(reader.GetOrdinal("Units"))
     End Sub
 
 
@@ -30,35 +31,32 @@
 
 
     Public Function create(ByVal b As Book) As Integer
-        'try to insert; if exists then update with +1 units
+        Dim comm_insert As String = "INSERT INTO Books ([Title], [Author], [Section], [Collection], [Units]) " &
+                            "VALUES ('" & b.title & "', '" & b.author & "', '" & b.section & "', '" & b.collection & "', " & b.units & ");"
 
+        Dim returnCode = -1
         Try
-
-            Dim comm_insert As String = "INSERT INTO Books VALUES ('" & b.title & "','" & b.author & "', '" & b.section & "', '" & b.collection & "', '" & b.units & "');"
-            Return DDBBBroker.getInstance().change(comm_insert)
-
-        Catch ex As Exception 'it already exists
-
-            Dim comm As String = "UPDATE Books SET Units=Units+1 WHERE Title='" & b.title & "' AND Author='" & b.author & "';"
-            Return DDBBBroker.getInstance().change(comm)
-
+            returnCode = DDBBBroker.getInstance().change(comm_insert)
+        Catch ex As Exception
+            MessageBox.Show(ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error)
         End Try
+
+        Return returnCode
 
     End Function
 
     Public Sub readAll(ByRef b As Book) 'returns an OleDBDataReader data structure
         Dim comm As String = "SELECT * FROM Books;"
-        Dim readerAux As OleDb.OleDbDataReader = DDBBBroker.getInstance().read(comm)
-        Dim tmpBook As Book
-        Dim title, author, section, collection, units As String
+        Dim reader As OleDb.OleDbDataReader = DDBBBroker.getInstance().read(comm)
 
-        While readerAux.Read()
-            title = readerAux.GetValue(0)
-            author = readerAux.GetValue(1)
-            section = readerAux.GetValue(2)
-            collection = readerAux.GetValue(3)
-            units = CInt(readerAux.GetValue(4))
-            tmpBook = New Book(title, author, section, Collection, units)
+        While reader.Read()
+            Dim title = reader.GetValue(reader.GetOrdinal("Title"))
+            Dim author = reader.GetValue(reader.GetOrdinal("Author"))
+            Dim section = reader.GetValue(reader.GetOrdinal("Section"))
+            Dim collection = reader.GetValue(reader.GetOrdinal("Collection"))
+            Dim units = reader.GetValue(reader.GetOrdinal("Units"))
+
+            Dim tmpBook = New Book(title, author, section, collection, units)
             b.dao._books.Add(tmpBook)
         End While
     End Sub

@@ -1,6 +1,5 @@
 ﻿Public Class Edit_form
     Shared _old_book As Book
-    Private _new_book As Book
 
     Private Sub Cancel_Edition(sender As Object, e As EventArgs) Handles btn_cancel.Click
         Me.Close()
@@ -11,11 +10,12 @@
         Dim response = MessageBox.Show(msg, "Save", MessageBoxButtons.YesNo)
 
         If response = MsgBoxResult.Yes Then
-            _new_book = New Book(tb_title.Text, tb_author.Text, tb_section.Text, tb_collection.Text, tb_units.Text)
+            Dim new_book = New Book(tb_title.Text, tb_author.Text, tb_section.Text, tb_collection.Text, tb_units.Text)
 
-            'UPDATE sql sentence will not work if changing primary keys (title and author)
+            'Update query will not work if changing primary keys (title and author)
+            new_book.create()
             _old_book.delete()
-            _new_book.create()
+
             Main_form.LoadDDBB()
             Me.Close()
         End If

@@ -1,6 +1,5 @@
 ﻿Public Class Main_form
 
-    Private _b As Book
     Friend WithEvents listView_contextMenu As New ContextMenu()
     Dim mnuItemRemove As New MenuItem("Delete")
     Dim mnuItemEdit As New MenuItem("Edit")
@@ -33,20 +32,25 @@
     Private Sub Btn_add_Click(sender As Object, e As EventArgs) Handles Btn_add.Click
         If tb_title.Text <> String.Empty And tb_author.Text <> String.Empty Then
 
-            _b = New Book(tb_title.Text, tb_author.Text, tb_section.Text, tb_collection.Text)
+            Dim book = New Book(tb_title.Text, tb_author.Text, tb_section.Text, tb_collection.Text)
 
-            _b.create()
+            Dim returnCdoe = book.create()
 
-            LoadDDBB()
+            If (returnCdoe > 0) Then
+                lbl_info.Text = "New book " & tb_title.Text & " added correctly"
 
-            lbl_info.Text = "Book " & tb_title.Text & " stored correctly"
+                tb_title.Text = String.Empty
+                tb_author.Text = String.Empty
+                tb_section.Text = String.Empty
+                tb_collection.Text = String.Empty
 
-            tb_title.Text = String.Empty
-            tb_author.Text = String.Empty
-            tb_section.Text = String.Empty
-            tb_collection.Text = String.Empty
+                LoadDDBB()
+            Else
+                lbl_info.Text = "Error inserting book " & tb_title.Text
+            End If
+
         Else
-            lbl_info.Text = "Please insert at least a title and an author"
+            lbl_info.Text = "Please insert at least the title and the author"
         End If
     End Sub
 
@@ -64,9 +68,9 @@
     Public Sub LoadDDBB()
         listView_books.Items.Clear()
 
-        _b = New Book()
+        Dim book = New Book()
         Try
-            _b.readAll()
+            book.readAll()
         Catch ex As Exception
             MessageBox.Show(ex.Message, ex.Source, MessageBoxButtons.OK, MessageBoxIcon.Error)
             Exit Sub
@@ -75,22 +79,22 @@
         Dim item As ListViewItem
         Dim title_list, author_list, section_list, collection_list As New List(Of String)
 
-        For Each bAux As Book In _b.dao._books
-            item = New ListViewItem(bAux.title)
-            item.SubItems.Add(bAux.author)
+        For Each book_auux As Book In book.dao._books
+            item = New ListViewItem(book_auux.title)
+            item.SubItems.Add(book_auux.author)
 
-            bAux.section = If(bAux.section = "None", String.Empty, bAux.section)
-            item.SubItems.Add(bAux.section)
+            book_auux.section = If(book_auux.section = "None", String.Empty, book_auux.section)
+            item.SubItems.Add(book_auux.section)
 
-            bAux.collection = If(bAux.collection = "None", String.Empty, bAux.collection)
-            item.SubItems.Add(bAux.collection)
-            item.SubItems.Add(CStr(bAux.units))
+            book_auux.collection = If(book_auux.collection = "None", String.Empty, book_auux.collection)
+            item.SubItems.Add(book_auux.collection)
+            item.SubItems.Add(CStr(book_auux.units))
             listView_books.Items.Add(item)
 
-            title_list.Add(bAux.title)
-            author_list.Add(bAux.author)
-            section_list.Add(bAux.section)
-            collection_list.Add(bAux.collection)
+            title_list.Add(book_auux.title)
+            author_list.Add(book_auux.author)
+            section_list.Add(book_auux.section)
+            collection_list.Add(book_auux.collection)
         Next
 
         Fill_TexBox_Autocomplete(title_list, author_list, section_list, collection_list)
@@ -137,13 +141,13 @@
             title = listView_books.SelectedItems(0).SubItems(0).Text
             author = listView_books.SelectedItems(0).SubItems(1).Text
 
-            msg = "Are you sure you want to permanently delete " & title & " from " & author & "?"
+            msg = "Are you sure you want to permanently delete the book " & title & " from " & author & "?"
             Dim response = MessageBox.Show(msg, "Delete book", MessageBoxButtons.YesNo)
 
             If response = MsgBoxResult.Yes Then
-                _b = New Book(title, author)
-                _b.delete()
-                lbl_info.Text = title & " successfully deleted"
+                Dim book = New Book(title, author)
+                book.delete()
+                lbl_info.Text = "Book " & title & " successfully deleted"
                 LoadDDBB()
             End If
         End If
@@ -152,9 +156,9 @@
     'Creates a .txt file with the current content of the list view
     Private Sub GeneratetxtToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles GeneratetxtToolStripMenuItem.Click
         Dim file As System.IO.StreamWriter
-        Dim filename As String = "Athena.txt"
-        Dim content As String = ""
+        Dim filename As String = "Athena_books.txt"
 
+        Dim content As String = ""
         For Each item As ListViewItem In listView_books.Items
             content += item.Text & " - " & item.SubItems(1).Text + " - " & item.SubItems(2).Text + " - " & item.SubItems(3).Text & vbCrLf
         Next
@@ -179,9 +183,9 @@
         collection = listView_books.SelectedItems(0).SubItems(3).Text
         units = listView_books.SelectedItems(0).SubItems(4).Text
 
-        _b = New Book(title, author, section, collection, units)
+        Dim book = New Book(title, author, section, collection, units)
 
-        Edit_form.setValues(_b)
+        Edit_form.setValues(book)
         Edit_form.Show()
     End Sub
 

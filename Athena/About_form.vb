@@ -1,6 +1,6 @@
 ﻿Public Class About_form
     Dim repostory_address As String = "http://github.com/gomezportillo/athena"
-    Dim latest_build As String = "21.VII.2016"
+    Dim current_build As String = "October 2024"
 
     Private Sub Button1_Click(sender As Object, e As EventArgs) Handles Button1.Click
         Me.Close()
@@ -11,6 +11,6 @@
     End Sub
 
     Private Sub About_form_Load(sender As Object, e As EventArgs) Handles MyBase.Load
-        Me.lbl_about.Text += " Current build " + latest_build
+        Me.lbl_about.Text += " Current build " + current_build
     End Sub
 End Class
